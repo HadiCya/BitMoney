@@ -1,0 +1,36 @@
+[
+    {
+        "id": "Lunch",
+        "title": "You are hungry and want to eat lunch. What do you do?",
+        "choiceArr": [{
+            "title": "Go out for lunch",
+            "outcome": -2 },{
+            "title": "Get a snack",
+            "outcome": -1 },{
+            "title": "Go hungry for now",
+            "outcome": 0 }]
+    },
+    {
+        "id": "Drive",
+        "title": "Time to drive to work. How do you get there?",
+        "choiceArr": [{
+            "title": "Take the bus",
+            "outcome": -1 },{
+            "title": "Ask a coworker to carpool",
+            "outcome": 0 },{
+            "title": "Take your car",
+            "outcome": 0 }]
+    },
+    {
+        "id": "Drinking",
+        "title": "Your friends invite you out drinking. Do you go?",
+        "choiceArr": [{
+            "title": "Go out with them",
+            "outcome": -2 },{
+            "title": "Invite them over",
+            "outcome": -1 },{
+            "title": "Don't go",
+            "outcome": 0 }]
+    }
+]
+

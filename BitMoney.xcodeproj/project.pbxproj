@@ -7,15 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F045B162992A3FE00E01F19 /* TitleScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F045B152992A3FE00E01F19 /* TitleScreen.swift */; };
+		0FB8035729914B8200443007 /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB8035629914B8200443007 /* JSONParser.swift */; };
+		0FB8035B29928DD100443007 /* prstart.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0FB8035829928DD100443007 /* prstart.ttf */; };
+		0FB8035C29928DD100443007 /* prstartk.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0FB8035929928DD100443007 /* prstartk.ttf */; };
+		0FB8035D29928DD100443007 /* license.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0FB8035A29928DD100443007 /* license.txt */; };
 		0FF0903B298D46010059C09E /* BitMoneyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF0903A298D46010059C09E /* BitMoneyApp.swift */; };
 		0FF0903D298D46010059C09E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF0903C298D46010059C09E /* ContentView.swift */; };
 		0FF0903F298D46030059C09E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FF0903E298D46030059C09E /* Assets.xcassets */; };
 		0FF09042298D46030059C09E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FF09041298D46030059C09E /* Preview Assets.xcassets */; };
 		0FF09044298D46030059C09E /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF09043298D46030059C09E /* Persistence.swift */; };
 		0FF09047298D46030059C09E /* BitMoney.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0FF09045298D46030059C09E /* BitMoney.xcdatamodeld */; };
+		0FF09052298D68290059C09E /* scenarios.json in Resources */ = {isa = PBXBuildFile; fileRef = 0FF09051298D68290059C09E /* scenarios.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0F045B152992A3FE00E01F19 /* TitleScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleScreen.swift; sourceTree = "<group>"; };
+		0FB8035629914B8200443007 /* JSONParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONParser.swift; sourceTree = "<group>"; };
+		0FB8035829928DD100443007 /* prstart.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = prstart.ttf; sourceTree = "<group>"; };
+		0FB8035929928DD100443007 /* prstartk.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = prstartk.ttf; sourceTree = "<group>"; };
+		0FB8035A29928DD100443007 /* license.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = license.txt; sourceTree = "<group>"; };
 		0FF09037298D46010059C09E /* BitMoney.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BitMoney.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FF0903A298D46010059C09E /* BitMoneyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitMoneyApp.swift; sourceTree = "<group>"; };
 		0FF0903C298D46010059C09E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -24,6 +35,7 @@
 		0FF09043298D46030059C09E /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		0FF09046298D46030059C09E /* BitMoney.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BitMoney.xcdatamodel; sourceTree = "<group>"; };
 		0FF09048298D46030059C09E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0FF09051298D68290059C09E /* scenarios.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = scenarios.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +52,9 @@
 		0FF0902E298D46010059C09E = {
 			isa = PBXGroup;
 			children = (
+				0FB8035A29928DD100443007 /* license.txt */,
+				0FB8035829928DD100443007 /* prstart.ttf */,
+				0FB8035929928DD100443007 /* prstartk.ttf */,
 				0FF09039298D46010059C09E /* BitMoney */,
 				0FF09038298D46010059C09E /* Products */,
 			);
@@ -63,6 +78,9 @@
 				0FF09048298D46030059C09E /* Info.plist */,
 				0FF09045298D46030059C09E /* BitMoney.xcdatamodeld */,
 				0FF09040298D46030059C09E /* Preview Content */,
+				0FF09051298D68290059C09E /* scenarios.json */,
+				0FB8035629914B8200443007 /* JSONParser.swift */,
+				0F045B152992A3FE00E01F19 /* TitleScreen.swift */,
 			);
 			path = BitMoney;
 			sourceTree = "<group>";
@@ -133,8 +151,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0FB8035D29928DD100443007 /* license.txt in Resources */,
+				0FF09052298D68290059C09E /* scenarios.json in Resources */,
 				0FF09042298D46030059C09E /* Preview Assets.xcassets in Resources */,
 				0FF0903F298D46030059C09E /* Assets.xcassets in Resources */,
+				0FB8035B29928DD100443007 /* prstart.ttf in Resources */,
+				0FB8035C29928DD100443007 /* prstartk.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,6 +168,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				0FF09047298D46030059C09E /* BitMoney.xcdatamodeld in Sources */,
+				0FB8035729914B8200443007 /* JSONParser.swift in Sources */,
+				0F045B162992A3FE00E01F19 /* TitleScreen.swift in Sources */,
 				0FF09044298D46030059C09E /* Persistence.swift in Sources */,
 				0FF0903D298D46010059C09E /* ContentView.swift in Sources */,
 				0FF0903B298D46010059C09E /* BitMoneyApp.swift in Sources */,
@@ -280,6 +304,7 @@
 				DEVELOPMENT_TEAM = 9E7677T27M;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BitMoney/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -309,6 +334,7 @@
 				DEVELOPMENT_TEAM = 9E7677T27M;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BitMoney/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

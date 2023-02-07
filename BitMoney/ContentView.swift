@@ -8,81 +8,106 @@
 import SwiftUI
 import CoreData
 
+class GameState : ObservableObject {
+    @Published var money: Int
+    @Published var day: Int
+    @Published var scenario: Scenario
+    var scenarios : [Scenario]
+    //Add score modifier
+    
+    init(money: Int){
+        self.money = money
+        self.day = 1
+        self.scenarios = Scenario.allScenarios.shuffled()
+        self.scenario = self.scenarios[0]
+    }
+    
+    func update(money: Int){
+        self.money += money
+        self.scenario = scenarios[self.day]
+        self.day += 1
+        
+    }
+}
+
 struct ContentView: View {
-    @Environment(\.managedObjectContext) private var viewContext
-
-    @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
-        animation: .default)
-    private var items: FetchedResults<Item>
-
+    @StateObject var gamestate = GameState(money: 12)
     var body: some View {
-        NavigationView {
-            List {
-                ForEach(items) { item in
-                    NavigationLink {
-                        Text("Item at \(item.timestamp!, formatter: itemFormatter)")
-                    } label: {
-                        Text(item.timestamp!, formatter: itemFormatter)
+        GeometryReader { geo in
+            ZStack{
+                Image("Background")
+                    .scaledToFit()
+                    .edgesIgnoringSafeArea(.all)
+                    .frame(width: geo.size.width, height: geo.size.height, alignment: .center)
+                    .opacity(1.0)
+                VStack{
+                    VStack{
+                        Image("Line")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: geo.size.width, height: geo.size.height * 0.01,alignment: .top)
+                        ZStack(alignment: .topLeading) {
+                            HStack() {
+                                Image("MenuButton")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: geo.size.width * 0.3, height: geo.size.height * 0.1)
+                                Text("Day 1")
+                                    .font(Font.custom("PressStartK", size: geo.size.width * 0.04))
+                                    .foregroundColor(.black)
+                                    .frame(width: geo.size.width * 0.36, height: geo.size.height * 0.1)
+                                Image("MoneyCountBox")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: geo.size.width * 0.27, height: geo.size.height * 0.1)
+                                    .overlay(
+                                        Text("$\(gamestate.money)")
+                                            .font(Font.custom("PressStartK", size: geo.size.width * 0.05))
+                                            .foregroundColor(.black)
+                                    )
+                            }
+                        }
+                        Image("Line")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: geo.size.width, height: geo.size.height * 0.01,alignment: .center)
+                    }
+                    Image("Logo")
+                        .resizable()
+                        .scaledToFit()
+                    Text(gamestate.scenario.title)
+                        .font(Font.custom("PressStartK", size: geo.size.width * 0.05))
+                        .padding(geo.size.width * 0.05)
+                        .foregroundColor(.black)
+                    
+                    ForEach(gamestate.scenario.choiceArr, id: \.title) { choice in
+                        Button(action: {
+                            gamestate.update(money: choice.outcome)
+                        }) {
+//                            var dolladolla = ""
+//                            for
+                            Image("BlankButton")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: geo.size.width * 0.9)
+                                .overlay(
+                                    Text(choice.title + " (\(choice.outcome))")
+                                        .font(Font.custom("PressStartK", size: geo.size.width * 0.04))
+                                        .foregroundColor(.black)
+                                        .padding(geo.size.width * 0.04)
+                                )
+                            
+                        }
+                        
                     }
                 }
-                .onDelete(perform: deleteItems)
-            }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
-                }
-                ToolbarItem {
-                    Button(action: addItem) {
-                        Label("Add Item", systemImage: "plus")
-                    }
-                }
-            }
-            Text("Select an item")
-        }
-    }
-
-    private func addItem() {
-        withAnimation {
-            let newItem = Item(context: viewContext)
-            newItem.timestamp = Date()
-
-            do {
-                try viewContext.save()
-            } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-            }
-        }
-    }
-
-    private func deleteItems(offsets: IndexSet) {
-        withAnimation {
-            offsets.map { items[$0] }.forEach(viewContext.delete)
-
-            do {
-                try viewContext.save()
-            } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
             }
         }
     }
 }
 
-private let itemFormatter: DateFormatter = {
-    let formatter = DateFormatter()
-    formatter.dateStyle = .short
-    formatter.timeStyle = .medium
-    return formatter
-}()
-
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+        ContentView()
     }
 }
