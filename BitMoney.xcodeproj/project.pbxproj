@@ -13,12 +13,13 @@
 		0FB8035C29928DD100443007 /* prstartk.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0FB8035929928DD100443007 /* prstartk.ttf */; };
 		0FB8035D29928DD100443007 /* license.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0FB8035A29928DD100443007 /* license.txt */; };
 		0FF0903B298D46010059C09E /* BitMoneyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF0903A298D46010059C09E /* BitMoneyApp.swift */; };
-		0FF0903D298D46010059C09E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF0903C298D46010059C09E /* ContentView.swift */; };
+		0FF0903D298D46010059C09E /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF0903C298D46010059C09E /* GameView.swift */; };
 		0FF0903F298D46030059C09E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FF0903E298D46030059C09E /* Assets.xcassets */; };
 		0FF09042298D46030059C09E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FF09041298D46030059C09E /* Preview Assets.xcassets */; };
 		0FF09044298D46030059C09E /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF09043298D46030059C09E /* Persistence.swift */; };
 		0FF09047298D46030059C09E /* BitMoney.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0FF09045298D46030059C09E /* BitMoney.xcdatamodeld */; };
 		0FF09052298D68290059C09E /* scenarios.json in Resources */ = {isa = PBXBuildFile; fileRef = 0FF09051298D68290059C09E /* scenarios.json */; };
+		BE33EF2B2992E8460027B520 /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE33EF2A2992E8460027B520 /* GameState.swift */; };
 		BEACACEB2992A8FC0081BE84 /* EndScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEACACEA2992A8FC0081BE84 /* EndScreen.swift */; };
 /* End PBXBuildFile section */
 
@@ -30,13 +31,14 @@
 		0FB8035A29928DD100443007 /* license.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = license.txt; sourceTree = "<group>"; };
 		0FF09037298D46010059C09E /* BitMoney.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BitMoney.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FF0903A298D46010059C09E /* BitMoneyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitMoneyApp.swift; sourceTree = "<group>"; };
-		0FF0903C298D46010059C09E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		0FF0903C298D46010059C09E /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		0FF0903E298D46030059C09E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0FF09041298D46030059C09E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0FF09043298D46030059C09E /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		0FF09046298D46030059C09E /* BitMoney.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BitMoney.xcdatamodel; sourceTree = "<group>"; };
 		0FF09048298D46030059C09E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0FF09051298D68290059C09E /* scenarios.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = scenarios.json; sourceTree = "<group>"; };
+		BE33EF2A2992E8460027B520 /* GameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameState.swift; sourceTree = "<group>"; };
 		BEACACEA2992A8FC0081BE84 /* EndScreen.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = EndScreen.swift; sourceTree = "<group>"; wrapsLines = 1; };
 /* End PBXFileReference section */
 
@@ -74,7 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				0FF0903A298D46010059C09E /* BitMoneyApp.swift */,
-				0FF0903C298D46010059C09E /* ContentView.swift */,
+				0FF0903C298D46010059C09E /* GameView.swift */,
 				0FF0903E298D46030059C09E /* Assets.xcassets */,
 				0FF09043298D46030059C09E /* Persistence.swift */,
 				0FF09048298D46030059C09E /* Info.plist */,
@@ -84,6 +86,7 @@
 				0FB8035629914B8200443007 /* JSONParser.swift */,
 				0F045B152992A3FE00E01F19 /* TitleScreen.swift */,
 				BEACACEA2992A8FC0081BE84 /* EndScreen.swift */,
+				BE33EF2A2992E8460027B520 /* GameState.swift */,
 			);
 			path = BitMoney;
 			sourceTree = "<group>";
@@ -174,7 +177,8 @@
 				0FB8035729914B8200443007 /* JSONParser.swift in Sources */,
 				0F045B162992A3FE00E01F19 /* TitleScreen.swift in Sources */,
 				0FF09044298D46030059C09E /* Persistence.swift in Sources */,
-				0FF0903D298D46010059C09E /* ContentView.swift in Sources */,
+				0FF0903D298D46010059C09E /* GameView.swift in Sources */,
+				BE33EF2B2992E8460027B520 /* GameState.swift in Sources */,
 				0FF0903B298D46010059C09E /* BitMoneyApp.swift in Sources */,
 				BEACACEB2992A8FC0081BE84 /* EndScreen.swift in Sources */,
 			);

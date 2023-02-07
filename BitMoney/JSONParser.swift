@@ -13,7 +13,6 @@ struct Scenario: Codable {
     var choiceArr: [Choice]
     
     static let allScenarios: [Scenario] = Bundle.main.decode(file: "scenarios.json")
-    static let samplePerson: Scenario = allScenarios[0]
 }
 
 struct Choice: Codable {
