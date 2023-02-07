@@ -11,6 +11,7 @@ import SwiftUI
 struct TitleScreen: View {
 @State private var isActive : Bool = false
     var body: some View {
+        NavigationView{
         GeometryReader { geo in
             ZStack{
                 Image("Background")
@@ -59,6 +60,7 @@ struct TitleScreen: View {
                         )
                 }
             }
+        }
         }
     }
 }

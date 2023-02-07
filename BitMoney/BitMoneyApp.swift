@@ -13,7 +13,7 @@ struct BitMoneyApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            TitleScreen()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
