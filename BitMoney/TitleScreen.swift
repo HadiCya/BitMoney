@@ -62,7 +62,8 @@ struct TitleScreen: View {
         }
     }
 }
-struct ConentView_Previews: PreviewProvider {
+
+struct TitleScreen_Previews: PreviewProvider {
     static var previews: some View {
         TitleScreen()
     }
