@@ -37,7 +37,7 @@
 		0FF09046298D46030059C09E /* BitMoney.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BitMoney.xcdatamodel; sourceTree = "<group>"; };
 		0FF09048298D46030059C09E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0FF09051298D68290059C09E /* scenarios.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = scenarios.json; sourceTree = "<group>"; };
-		BEACACEA2992A8FC0081BE84 /* EndScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndScreen.swift; sourceTree = "<group>"; };
+		BEACACEA2992A8FC0081BE84 /* EndScreen.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = EndScreen.swift; sourceTree = "<group>"; wrapsLines = 1; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
