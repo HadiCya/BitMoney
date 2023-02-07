@@ -1,5 +1,5 @@
 //
-//  GameView.swift
+//  ContentView.swift
 //  BitMoney
 //
 //  Created by Hadi Chaaban on 2/3/23.
@@ -8,7 +8,29 @@
 import SwiftUI
 import CoreData
 
-struct GameView: View {
+class GameState : ObservableObject {
+    @Published var money: Int
+    @Published var day: Int
+    @Published var scenario: Scenario
+    var scenarios : [Scenario]
+    //Add score modifier
+    
+    init(money: Int){
+        self.money = money
+        self.day = 1
+        self.scenarios = Scenario.allScenarios.shuffled()
+        self.scenario = self.scenarios[0]
+    }
+    
+    func update(money: Int){
+        self.money += money
+        self.scenario = scenarios[self.day]
+        self.day += 1
+        
+    }
+}
+
+struct ContentView: View {
     @StateObject var gamestate = GameState(money: 12)
     var body: some View {
         GeometryReader { geo in
@@ -30,7 +52,7 @@ struct GameView: View {
                                     .resizable()
                                     .scaledToFit()
                                     .frame(width: geo.size.width * 0.3, height: geo.size.height * 0.1)
-                                Text("Day \(gamestate.day)")
+                                Text("Day 1")
                                     .font(Font.custom("PressStartK", size: geo.size.width * 0.04))
                                     .foregroundColor(.black)
                                     .frame(width: geo.size.width * 0.36, height: geo.size.height * 0.1)
@@ -62,6 +84,8 @@ struct GameView: View {
                         Button(action: {
                             gamestate.update(money: choice.outcome)
                         }) {
+//                            var dolladolla = ""
+//                            for
                             Image("BlankButton")
                                 .resizable()
                                 .scaledToFit()
@@ -79,14 +103,11 @@ struct GameView: View {
                 }
             }
         }
-        .navigationBarTitle("")
-        .navigationBarBackButtonHidden(true)
-        .navigationBarHidden(true)
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        GameView()
+        ContentView()
     }
 }
