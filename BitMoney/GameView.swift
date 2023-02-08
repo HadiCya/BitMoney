@@ -27,10 +27,16 @@ struct GameView: View {
                             .frame(width: geo.size.width, height: geo.size.height * 0.01,alignment: .top)
                         ZStack(alignment: .topLeading) {
                             HStack() {
-                                Image("MenuButton")
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(width: geo.size.width * 0.3, height: geo.size.height * 0.1)
+                                Button(action: {
+                                    gamestate.appState = .title
+                               })
+                              {
+                                  Image("MenuButton")
+                                      .resizable()
+                                      .scaledToFit()
+                                      .frame(width: geo.size.width * 0.3, height: geo.size.height * 0.1)
+                              }
+                                
                                 Text("Day \(gamestate.day)")
                                     .font(Font.custom("PressStartK", size: geo.size.width * 0.04))
                                     .foregroundColor(.black)

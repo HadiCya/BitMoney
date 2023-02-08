@@ -42,18 +42,19 @@ struct TitleScreen: View {
                         .foregroundColor(.black)
                       Button(action: {
                           gamestate.appState = .game
-                     }) {Text("Switch View")}
-                     
-                    Image("BlankButton")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: geo.size.width * 0.9)
-                        .overlay(
-                            Text("Start")
-                                .font(Font.custom("PressStartK", size: geo.size.width * 0.08))
-                                .foregroundColor(.black)
-                                .padding(geo.size.width * 0.04)
-                        )
+                     })
+                    {
+                        Image("BlankButton")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: geo.size.width * 0.9)
+                            .overlay(
+                                Text("Start")
+                                    .font(Font.custom("PressStartK", size: geo.size.width * 0.08))
+                                    .foregroundColor(.black)
+                                    .padding(geo.size.width * 0.04)
+                            )
+                    }
                     Image("BlankButton")
                         .resizable()
                         .scaledToFit()
