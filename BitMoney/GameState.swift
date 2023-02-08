@@ -6,7 +6,11 @@
 //
 
 import Foundation
+
+
 class GameState : ObservableObject {
+    
+    @Published var appState = AppState.title
     @Published var money: Int
     @Published var day: Int = 1
     @Published var scenario: Scenario
@@ -33,6 +37,6 @@ class GameState : ObservableObject {
     }
     
     func endgame(){
-        //END GAME ROUTINE
+        
     }
 }

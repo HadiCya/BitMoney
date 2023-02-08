@@ -7,14 +7,17 @@
 
 import SwiftUI
 
+
+
+
 @main
 struct BitMoneyApp: App {
-    let persistenceController = PersistenceController.shared
-
     var body: some Scene {
         WindowGroup {
-            TitleScreen()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+            ContentView()
+                
+            
+                
         }
     }
 }

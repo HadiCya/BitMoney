@@ -21,6 +21,8 @@
 		0FF09052298D68290059C09E /* scenarios.json in Resources */ = {isa = PBXBuildFile; fileRef = 0FF09051298D68290059C09E /* scenarios.json */; };
 		BE33EF2B2992E8460027B520 /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE33EF2A2992E8460027B520 /* GameState.swift */; };
 		BEACACEB2992A8FC0081BE84 /* EndScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEACACEA2992A8FC0081BE84 /* EndScreen.swift */; };
+		BECA73A42993EC9E005983F8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECA73A32993EC9E005983F8 /* ContentView.swift */; };
+		BECA73A62993F392005983F8 /* DifficultyScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECA73A52993F392005983F8 /* DifficultyScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,8 @@
 		0FF09051298D68290059C09E /* scenarios.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = scenarios.json; sourceTree = "<group>"; };
 		BE33EF2A2992E8460027B520 /* GameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameState.swift; sourceTree = "<group>"; };
 		BEACACEA2992A8FC0081BE84 /* EndScreen.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = EndScreen.swift; sourceTree = "<group>"; wrapsLines = 1; };
+		BECA73A32993EC9E005983F8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		BECA73A52993F392005983F8 /* DifficultyScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DifficultyScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,7 @@
 		0FF0902E298D46010059C09E = {
 			isa = PBXGroup;
 			children = (
+				BECA73A32993EC9E005983F8 /* ContentView.swift */,
 				0FB8035A29928DD100443007 /* license.txt */,
 				0FB8035829928DD100443007 /* prstart.ttf */,
 				0FB8035929928DD100443007 /* prstartk.ttf */,
@@ -87,6 +92,7 @@
 				0F045B152992A3FE00E01F19 /* TitleScreen.swift */,
 				BEACACEA2992A8FC0081BE84 /* EndScreen.swift */,
 				BE33EF2A2992E8460027B520 /* GameState.swift */,
+				BECA73A52993F392005983F8 /* DifficultyScreen.swift */,
 			);
 			path = BitMoney;
 			sourceTree = "<group>";
@@ -175,9 +181,11 @@
 			files = (
 				0FF09047298D46030059C09E /* BitMoney.xcdatamodeld in Sources */,
 				0FB8035729914B8200443007 /* JSONParser.swift in Sources */,
+				BECA73A62993F392005983F8 /* DifficultyScreen.swift in Sources */,
 				0F045B162992A3FE00E01F19 /* TitleScreen.swift in Sources */,
 				0FF09044298D46030059C09E /* Persistence.swift in Sources */,
 				0FF0903D298D46010059C09E /* GameView.swift in Sources */,
+				BECA73A42993EC9E005983F8 /* ContentView.swift in Sources */,
 				BE33EF2B2992E8460027B520 /* GameState.swift in Sources */,
 				0FF0903B298D46010059C09E /* BitMoneyApp.swift in Sources */,
 				BEACACEB2992A8FC0081BE84 /* EndScreen.swift in Sources */,

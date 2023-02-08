@@ -9,7 +9,8 @@ import SwiftUI
 import CoreData
 
 struct GameView: View {
-    @StateObject var gamestate = GameState(money: 12)
+    
+    @ObservedObject var gamestate: GameState
     var body: some View {
         GeometryReader { geo in
             ZStack{
@@ -59,9 +60,8 @@ struct GameView: View {
                         .foregroundColor(.black)
                     
                     ForEach(gamestate.scenario.choiceArr, id: \.title) { choice in
-                        Button(action: {
-                            gamestate.update(money: choice.outcome)
-                        }) {
+                        Button(action: {gamestate.update(money: choice.outcome)})
+                        {
                             Image("BlankButton")
                                 .resizable()
                                 .scaledToFit()
@@ -79,14 +79,12 @@ struct GameView: View {
                 }
             }
         }
-        .navigationBarTitle("")
-                .navigationBarBackButtonHidden(true)
-                .navigationBarHidden(true)
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+
+struct GameView_Previews: PreviewProvider {
     static var previews: some View {
-        GameView()
+        GameView(gamestate: GameState(money: 12))
     }
 }
