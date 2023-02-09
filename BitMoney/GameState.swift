@@ -15,6 +15,7 @@ class GameState : ObservableObject {
     @Published var day: Int = 1
     @Published var scenario: Scenario
     var scenarios : [Scenario]
+
     
     init(money: Int){
         self.money = money
@@ -35,6 +36,9 @@ class GameState : ObservableObject {
         }
         self.scenario = scenarios[rand]
         self.day += 1
+        if (self.day % 7 == 0) {
+            self.money += 4
+        }
     }
     
     func endgame(){

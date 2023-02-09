@@ -31,6 +31,39 @@
             "outcome": -1 },{
             "title": "Don't go",
             "outcome": 0 }]
-    }
+    },
+    {
+        "id": "Gas",
+        "title": "On your way back from work, you notice your car on E.",
+        "choiceArr": [{
+            "title": "Fill it up all the way",
+            "outcome": -2 },{
+            "title": "Fill up just half",
+            "outcome": -1 },{
+            "title": "Just try and get home",
+            "outcome": 0 }]
+    },
+    {
+        "id": "Cat Sick",
+        "title": "Your cat, Kobe gets sick",
+        "choiceArr": [{
+            "title": "Take him to the vet",
+            "outcome": -3 },{
+            "title": "Go to the vet with a loan",
+            "outcome": -1 },{
+            "title": "Take care of him yourself",
+            "outcome": 0 }]
+    },
+    {
+        "id": "Eating Out",
+        "title": "You get invited out to eat with some friends. Do you go out with them",
+        "choiceArr": [{
+            "title": "Go out with them",
+            "outcome": -1 },{
+            "title": "Have someone pay for you",
+            "outcome": -1 },{
+            "title": "Don't go out with them",
+            "outcome": 0 }]
+    },
 ]
 
