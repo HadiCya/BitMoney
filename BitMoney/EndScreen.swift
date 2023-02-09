@@ -48,26 +48,38 @@ struct EndScreen: View {
                                 .foregroundColor(.black)
                                 .padding(geo.size.width * 0.04)
                         )
-                    Image("BlankButton")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: geo.size.width * 0.9)
-                        .overlay(
-                            Text("Restart")
-                                .font(Font.custom("PressStartK", size: geo.size.width * 0.08))
-                                .foregroundColor(.black)
-                                .padding(geo.size.width * 0.04)
-                        )
-                    Image("BlankButton")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: geo.size.width * 0.9)
-                        .overlay(
-                            Text("Main Menu")
-                                .font(Font.custom("PressStartK", size: geo.size.width * 0.08))
-                                .foregroundColor(.black)
-                                .padding(geo.size.width * 0.04)
-                        )
+                    Button(action: {
+                        gamestate.appState = .difficulty
+                   })
+                  {
+                      Image("BlankButton")
+                          .resizable()
+                          .scaledToFit()
+                          .frame(width: geo.size.width * 0.9)
+                          .overlay(
+                              Text("Restart")
+                                  .font(Font.custom("PressStartK", size: geo.size.width * 0.08))
+                                  .foregroundColor(.black)
+                                  .padding(geo.size.width * 0.04)
+                          )
+                  }
+                   
+                    Button(action: {
+                        gamestate.appState = .title
+                   })
+                  {
+                      Image("BlankButton")
+                          .resizable()
+                          .scaledToFit()
+                          .frame(width: geo.size.width * 0.9)
+                          .overlay(
+                              Text("Main Menu")
+                                  .font(Font.custom("PressStartK", size: geo.size.width * 0.08))
+                                  .foregroundColor(.black)
+                                  .padding(geo.size.width * 0.04)
+                          )
+                  }
+                    
                     Image("ShareIcon")
                         .resizable()
                         .scaledToFit()

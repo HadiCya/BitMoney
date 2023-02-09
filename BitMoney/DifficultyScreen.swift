@@ -7,6 +7,9 @@
 
 import SwiftUI
 
+
+
+
 struct DifficultyScreen: View {
 
     @ObservedObject var gamestate: GameState
@@ -66,16 +69,22 @@ struct DifficultyScreen: View {
                                     .frame(width: geo.size.width * 0.1)
                             }
                         )
-                    Image("BlankButton")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: geo.size.width * 0.9)
-                        .overlay(
-                            Text("Next")
-                                .font(Font.custom("PressStartK", size: geo.size.width * 0.08))
-                                .foregroundColor(.black)
-                                .padding(geo.size.width * 0.04)
-                        )
+                    Button(action: {
+                        gamestate.appState = .game
+                   })
+                  {
+                      Image("BlankButton")
+                          .resizable()
+                          .scaledToFit()
+                          .frame(width: geo.size.width * 0.9)
+                          .overlay(
+                              Text("Next")
+                                  .font(Font.custom("PressStartK", size: geo.size.width * 0.08))
+                                  .foregroundColor(.black)
+                                  .padding(geo.size.width * 0.04)
+                          )
+                  }
+                    
                 }
             }
         }

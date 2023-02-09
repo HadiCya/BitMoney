@@ -9,7 +9,6 @@ import SwiftUI
 import CoreData
 
 struct GameView: View {
-    
     @ObservedObject var gamestate: GameState
     var body: some View {
         GeometryReader { geo in
@@ -78,8 +77,9 @@ struct GameView: View {
                                         .foregroundColor(.black)
                                         .padding(geo.size.width * 0.04)
                                 )
-                            
-                        }
+                           
+                            }
+                       
                         
                     }
                 }

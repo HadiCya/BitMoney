@@ -9,21 +9,11 @@ import Foundation
 import SwiftUI
 
 struct TitleScreen: View {
-    //@EnvironmentObject var opData:OpData
+
     @ObservedObject var gamestate: GameState
     @State private var isActive : Bool = false
     var body: some View {
-        //        switch(opData.currView){
-        //        case .title:
-        //            TitleScreen()
-        //                .environmentObject(opData)
-        //        case .game:
-        //            GameView()
-        //                .environmentObject(opData)
-        //        case .end:
-        //            EndScreen()
-        //                .environmentObject(opData)
-        //        }
+
         GeometryReader { geo in
             ZStack{
                 Image("Background")
@@ -41,7 +31,7 @@ struct TitleScreen: View {
                         .padding(geo.size.width * 0.02)
                         .foregroundColor(.black)
                       Button(action: {
-                          gamestate.appState = .game
+                          gamestate.appState = .difficulty
                      })
                     {
                         Image("BlankButton")
@@ -55,16 +45,22 @@ struct TitleScreen: View {
                                     .padding(geo.size.width * 0.04)
                             )
                     }
-                    Image("BlankButton")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: geo.size.width * 0.9)
-                        .overlay(
-                            Text("Resume")
-                                .font(Font.custom("PressStartK", size: geo.size.width * 0.08))
-                                .foregroundColor(.black)
-                                .padding(geo.size.width * 0.04)
-                        )
+                    Button(action: {
+                        gamestate.appState = .game
+                   })
+                  {
+                      Image("BlankButton")
+                          .resizable()
+                          .scaledToFit()
+                          .frame(width: geo.size.width * 0.9)
+                          .overlay(
+                              Text("Resume")
+                                  .font(Font.custom("PressStartK", size: geo.size.width * 0.08))
+                                  .foregroundColor(.black)
+                                  .padding(geo.size.width * 0.04)
+                          )
+                  }
+                    
                     Image("BlankButton")
                         .resizable()
                         .scaledToFit()

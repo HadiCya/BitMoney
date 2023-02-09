@@ -24,10 +24,11 @@ class GameState : ObservableObject {
     
     func update(money: Int){
         self.money += money
-        if (self.money <= 0){
+        if (self.money <= 0) {
             endgame()
             return
         }
+        
         var rand = Int.random(in: 0..<scenarios.count)
         while (self.scenario.id == scenarios[rand].id){
             rand = Int.random(in: 0..<scenarios.count)
@@ -37,6 +38,6 @@ class GameState : ObservableObject {
     }
     
     func endgame(){
-        
+        appState = AppState.end
     }
 }
