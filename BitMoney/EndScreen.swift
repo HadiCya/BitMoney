@@ -95,6 +95,6 @@ struct EndScreen: View {
 
 struct EndScreen_Previews: PreviewProvider {
     static var previews: some View {
-        EndScreen(gamestate: GameState(money: 12))
+        EndScreen(gamestate: GameState())
     }
 }

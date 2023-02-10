@@ -114,6 +114,6 @@ struct DifficultyScreen: View {
 }
 struct DifficultyScreen_Previews: PreviewProvider {
     static var previews: some View {
-        DifficultyScreen(gamestate: GameState(money: 12))
+        DifficultyScreen(gamestate: GameState())
     }
 }

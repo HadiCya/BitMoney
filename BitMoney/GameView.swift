@@ -62,7 +62,7 @@ struct GameView: View {
                     Text(gamestate.scenario.title)
                         .font(Font.custom("PressStartK", size: geo.size.width * 0.05))
                         .padding(geo.size.width * 0.05)
-                        .foregroundColor(.black)
+                        .foregroundColor(gamestate.scenario.status?.color)
                     
                     ForEach(gamestate.scenario.choiceArr, id: \.title) { choice in
                         Button(action: {gamestate.update(money: choice.outcome)})
@@ -91,6 +91,12 @@ struct GameView: View {
 
 struct GameView_Previews: PreviewProvider {
     static var previews: some View {
-        GameView(gamestate: GameState(money: 12))
+        GameView(gamestate: GameState())
+            .previewDevice(/*@START_MENU_TOKEN@*/"iPhone 11"/*@END_MENU_TOKEN@*/)
+        GameView(gamestate: GameState())
+            .previewDevice(/*@START_MENU_TOKEN@*/"iPhone 14 Pro Max"/*@END_MENU_TOKEN@*/)
+        GameView(gamestate: GameState())
+            .previewDevice(/*@START_MENU_TOKEN@*/"iPhone 14"/*@END_MENU_TOKEN@*/)
+            
     }
 }

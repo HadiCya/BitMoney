@@ -85,6 +85,6 @@ struct TitleScreen: View {
 
 struct TitleScreen_Previews: PreviewProvider {
     static var previews: some View {
-        TitleScreen(gamestate: GameState(money: 12))
+        TitleScreen(gamestate: GameState())
     }
 }

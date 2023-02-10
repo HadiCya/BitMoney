@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject var gameState = GameState(money: 12)
+    @StateObject var gameState = GameState()
     var body: some View {
         switch gameState.appState {
         case .title:

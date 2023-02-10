@@ -11,16 +11,20 @@ import Foundation
 class GameState : ObservableObject {
     
     @Published var appState = AppState.title
-    @Published var money: Int
+    @Published var money: Int = 12
     @Published var day: Int = 1
     @Published var scenario: Scenario
-    var scenarios : [Scenario]
+    var scenarios: [Scenario]
+    var statuses: [Status: Int] = [:]
 
     
-    init(money: Int){
-        self.money = money
+    init(){
         self.scenarios = Scenario.allScenarios.shuffled()
         self.scenario = self.scenarios[Int.random(in: 0..<scenarios.count)]
+        for status in Status.allCases {
+            statuses[status] = self.money
+        }
+        print(statuses)
     }
     
     func update(money: Int){

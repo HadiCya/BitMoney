@@ -5,14 +5,36 @@
 //  Created by Hadi Chaaban on 2/6/23.
 //
 
-import Foundation
+import SwiftUI
 
 struct Scenario: Codable {
     var id: String
     var title: String
     var choiceArr: [Choice]
+    var status: Status?
     
     static let allScenarios: [Scenario] = Bundle.main.decode(file: "scenarios.json")
+}
+
+enum Status: String, Codable, CaseIterable {
+    case health
+    case social
+    case hunger
+    case happiness
+    
+    var color: Color {
+        switch self {
+            
+        case .health:
+            return .red
+        case .social:
+            return .blue
+        case .hunger:
+            return .green
+        case .happiness:
+            return .yellow
+        }
+    }
 }
 
 struct Choice: Codable {
