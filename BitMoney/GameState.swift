@@ -14,6 +14,7 @@ class GameState : ObservableObject {
     @Published var money: Int = 12
     @Published var day: Int = 1
     @Published var scenario: Scenario
+    @Published var scoreMultiplier: Double = 1
     var scenarios: [Scenario]
     var statuses: [Status: Int] = [:]
 

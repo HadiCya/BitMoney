@@ -23,27 +23,27 @@ struct DifficultyScreen: View {
                     .frame(width: geo.size.width, height: geo.size.height, alignment: .center)
                     .opacity(1.0)
                 VStack {
-                    Text("Difficulty\n\nN/A")
+                    Text("Difficulty\n\n\("N/A")")
                         .font(Font.custom("PressStartK", size: geo.size.width * 0.08))
                         .foregroundColor(.black)
                         .frame(maxWidth: geo.size.width, alignment: .center)
                         .padding(.bottom, geo.size.height * 0.02)
                         .multilineTextAlignment(.center)
-                    Text("Score Multiplier\n\nN/A")
+                    Text("Score Multiplier\n\n\(abs(currentValue / 150 - 2), specifier: "%.2f")")
                         .font(Font.custom("PressStartK", size: geo.size.width * 0.08))
                         .foregroundColor(.black)
                         .frame(maxWidth: geo.size.width, alignment: .center)
                         .padding(.bottom, geo.size.height * 0.02)
                         .multilineTextAlignment(.center)
                     Text("Starting Cash")
-                        .font(Font.custom("PressStartK", size: geo.size.width * 0.06))
+                        .font(Font.custom("PressStartK", size: geo.size.width * 0.08))
                         .foregroundColor(.black)
-                        .padding(geo.size.width * 0.04)
-                    Text("\n\n$\(Int(currentValue / 10 + 5))")
-                        .font(Font.custom("PressStartK", size: geo.size.width * 0.06))
+                        .multilineTextAlignment(.center)
+
+                    Text("\n$\(Int(currentValue / 10 + 5))")
+                        .font(Font.custom("PressStartK", size: geo.size.width * 0.08))
                             .foregroundColor(.black)
 
-                            .multilineTextAlignment(.center)
                     SliderView1(value: $currentValue)
                        .frame(width: geo.size.width * 0.9)
                        .overlay(
@@ -54,6 +54,7 @@ struct DifficultyScreen: View {
                             Button(action: {
                                 gamestate.appState = .game     
                                 gamestate.setMoney(money: Int((currentValue / 10 + 5)))
+                                gamestate.scoreMultiplier = (abs(currentValue / 150 - 2))
                             })
                             {
                                 Image("BlankButton")
