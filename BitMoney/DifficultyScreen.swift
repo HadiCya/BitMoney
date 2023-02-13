@@ -39,36 +39,18 @@ struct DifficultyScreen: View {
                         .font(Font.custom("PressStartK", size: geo.size.width * 0.06))
                         .foregroundColor(.black)
                         .padding(geo.size.width * 0.04)
+                    Text("\n\n$\(Int(currentValue / 10 + 5))")
+                        .font(Font.custom("PressStartK", size: geo.size.width * 0.06))
+                            .foregroundColor(.black)
+
+                            .multilineTextAlignment(.center)
                     SliderView1(value: $currentValue)
                        .frame(width: geo.size.width * 0.9)
                        .overlay(
+                    
                         VStack{
-                            Text("\n\n$\(Int(currentValue / 10 + 5))")
-                                .font(Font.custom("PressStartK", size: geo.size.width * 0.06))
-                                .foregroundColor(.black)
-
-                                .multilineTextAlignment(.center)
-                            Text("Scenario Difficulty")
-                                .font(Font.custom("PressStartK", size: geo.size.width * 0.06))
-                                .foregroundColor(.black)
-                                .padding(geo.size.width * 0.02)
-                                .multilineTextAlignment(.center)
-                            Image("BlankButton")
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: geo.size.width * 0.9)
-                                .overlay(
-                                    HStack{
-                                        Image("Line")
-                                            .resizable()
-                                            .scaledToFit()
-                                            .frame(width: geo.size.width * 0.65)
-                                        Image("DropDownArrow")
-                                            .resizable()
-                                            .scaledToFit()
-                                            .frame(width: geo.size.width * 0.1)
-                                    }
-                                )
+                            
+                           
                             Button(action: {
                                 gamestate.appState = .game
                                 
