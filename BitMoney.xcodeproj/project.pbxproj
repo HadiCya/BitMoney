@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0F045B162992A3FE00E01F19 /* TitleScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F045B152992A3FE00E01F19 /* TitleScreen.swift */; };
+		0F1FC012299A9CD3008D4CCF /* Popup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1FC011299A9CD3008D4CCF /* Popup.swift */; };
 		0FB8035729914B8200443007 /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB8035629914B8200443007 /* JSONParser.swift */; };
 		0FB8035B29928DD100443007 /* prstart.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0FB8035829928DD100443007 /* prstart.ttf */; };
 		0FB8035C29928DD100443007 /* prstartk.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0FB8035929928DD100443007 /* prstartk.ttf */; };
@@ -28,6 +29,7 @@
 
 /* Begin PBXFileReference section */
 		0F045B152992A3FE00E01F19 /* TitleScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleScreen.swift; sourceTree = "<group>"; };
+		0F1FC011299A9CD3008D4CCF /* Popup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Popup.swift; sourceTree = "<group>"; };
 		0FB8035629914B8200443007 /* JSONParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONParser.swift; sourceTree = "<group>"; };
 		0FB8035829928DD100443007 /* prstart.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = prstart.ttf; sourceTree = "<group>"; };
 		0FB8035929928DD100443007 /* prstartk.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = prstartk.ttf; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 				BE33EF2A2992E8460027B520 /* GameState.swift */,
 				BECA73A52993F392005983F8 /* DifficultyScreen.swift */,
 				BE99D37429953F7900DE4FCE /* Slider.swift */,
+				0F1FC011299A9CD3008D4CCF /* Popup.swift */,
 			);
 			path = BitMoney;
 			sourceTree = "<group>";
@@ -188,6 +191,7 @@
 				BECA73A62993F392005983F8 /* DifficultyScreen.swift in Sources */,
 				0F045B162992A3FE00E01F19 /* TitleScreen.swift in Sources */,
 				0FF09044298D46030059C09E /* Persistence.swift in Sources */,
+				0F1FC012299A9CD3008D4CCF /* Popup.swift in Sources */,
 				0FF0903D298D46010059C09E /* GameView.swift in Sources */,
 				BECA73A42993EC9E005983F8 /* ContentView.swift in Sources */,
 				BE33EF2B2992E8460027B520 /* GameState.swift in Sources */,
@@ -328,18 +332,20 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 0.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = Hadi.BitMoney;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -358,18 +364,20 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 0.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = Hadi.BitMoney;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

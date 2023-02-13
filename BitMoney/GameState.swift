@@ -21,15 +21,24 @@ class GameState : ObservableObject {
     init(){
         self.scenarios = Scenario.allScenarios.shuffled()
         self.scenario = self.scenarios[Int.random(in: 0..<scenarios.count)]
+    }
+    
+    func setMoney(money: Int){
+        self.money = money
         for status in Status.allCases {
             statuses[status] = self.money
         }
-        print(statuses)
     }
     
     func update(money: Int){
+        if let unwrappedStatus = self.scenario.status {
+            self.statuses[unwrappedStatus]! -= money + 1
+            if self.statuses[unwrappedStatus]! <= 0 {
+                self.statuses[Status.health]! -= 1
+            }
+        }
         self.money += money
-        if (self.money <= 0) {
+        if (self.money <= 0 || self.statuses[Status.health]! <= 0) {
             endgame()
             return
         }

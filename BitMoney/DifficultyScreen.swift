@@ -52,10 +52,8 @@ struct DifficultyScreen: View {
                             
                            
                             Button(action: {
-                                gamestate.appState = .game
-                                
-                                gamestate.money = Int((currentValue / 10 + 5))
-                                gamestate.day = 1
+                                gamestate.appState = .game     
+                                gamestate.setMoney(money: Int((currentValue / 10 + 5)))
                             })
                             {
                                 Image("BlankButton")

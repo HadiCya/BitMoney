@@ -32,9 +32,6 @@ struct TitleScreen: View {
                         .foregroundColor(.black)
                       Button(action: {
                           gamestate.appState = .difficulty
-                          
-                          gamestate.money = 12
-                          gamestate.day = 1
                      })
                     {
                         Image("BlankButton")

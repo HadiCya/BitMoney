@@ -83,7 +83,11 @@ struct GameView: View {
                         
                     }
                 }
+//                Popup()
+//                    .frame(width: geo.size.width)
+                
             }
+            
         }
     }
 }
