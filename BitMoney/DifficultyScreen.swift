@@ -62,7 +62,8 @@ struct DifficultyScreen: View {
                             
                            
                             Button(action: {
-                                gamestate.appState = .game     
+                                gamestate.appState = .game
+                                gamestate.day = 1
                                 gamestate.setMoney(money: Int(moneyMath * (currentValue / (geo.size.width * 0.85)) + 5))
                                 gamestate.scoreMultiplier = abs(sliderMath * (currentValue / (geo.size.width * 0.85)) - 2)
                             })
