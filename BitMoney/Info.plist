@@ -8,5 +8,7 @@
 	<array>
 		<string>prstartk.ttf</string>
 	</array>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<false/>
 </dict>
 </plist>

@@ -11,7 +11,7 @@ struct Scenario: Codable {
     var id: String
     var title: String
     var choiceArr: [Choice]
-    var status: Status?
+    var status: [Status]
     
     static let allScenarios: [Scenario] = Bundle.main.decode(file: "scenarios.json")
 }

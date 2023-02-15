@@ -9,7 +9,7 @@
             "outcome": -1 },{
             "title": "Go hungry for now",
             "outcome": 0 }],
-        "status": "hunger"
+        "status": ["hunger"]
     },
     {
         "id": "Drive",
@@ -20,7 +20,9 @@
             "title": "Ask a coworker to carpool",
             "outcome": 0 },{
             "title": "Take your car",
-            "outcome": 0 }],    },
+            "outcome": 0 }],
+        "status": []
+    },
     {
         "id": "Drinking",
         "title": "Your friends invite you out drinking. Do you go?",
@@ -31,7 +33,7 @@
             "outcome": -1 },{
             "title": "Don't go",
             "outcome": 0 }],
-        "status": "hunger"
+        "status": ["hunger"]
     },
     {
         "id": "Gas",
@@ -43,6 +45,7 @@
             "outcome": -1 },{
             "title": "Just try and get home",
             "outcome": 0 }],
+        "status": []
     },
     {
         "id": "Cat Sick",
@@ -54,7 +57,7 @@
             "outcome": -1 },{
             "title": "Take care of him yourself",
             "outcome": 0 }],
-        "status": "happiness"
+        "status": ["happiness"]
     },
     {
         "id": "Eating Out",
@@ -66,7 +69,127 @@
             "outcome": -1 },{
             "title": "Don't go out with them",
             "outcome": 0 }],
-        "status": "hunger"
+        "status": ["hunger"]
     },
+    {
+        "id": "Movies",
+        "title": "You are asked to see the new super hero movie coming out tonight",
+        "choiceArr": [{
+            "title": "Go out and buy snacks",
+            "outcome": -1 },{
+            "title": "Go out but don't buy snacks",
+            "outcome": -1 },{
+            "title": "Don't go out",
+            "outcome": 0 }],
+        "status": ["hunger", "social"]
+    },
+    {
+        "id": "Stock",
+        "title": "There is a fall in the stock you currently own",
+        "choiceArr": [{
+            "title": "Buy the dip",
+            "outcome": -2 },{
+            "title": "Sell what you have",
+            "outcome": 2 },{
+            "title": "Don't do anything",
+            "outcome": 0 }],
+        "status": []
+    },
+    {
+        "id": "Phone Break",
+        "title": "Walking to work and you drop and break your phone",
+        "choiceArr": [{
+            "title": "Replace the phone",
+            "outcome": -2 },{
+            "title": "Get it repaired",
+            "outcome": -1 },{
+            "title": "Use a cracked phone",
+            "outcome": 0 }],
+        "status": ["happiness"]
+    },
+    {
+        "id": "Music Subscription",
+        "title": "Your music subscription ended but have no other source of music on the go",
+        "choiceArr": [{
+            "title": "Renew your subscription",
+            "outcome": -2 },{
+            "title": "Find a cheaper but worse service",
+            "outcome": -1 },{
+            "title": "Go without music",
+            "outcome": 0 }],
+        "status": ["happiness"]
+    },
+    {
+        "id": "Charity",
+        "title": "Your going out and have an opportunity to donate to charity",
+        "choiceArr": [{
+            "title": "Give a decent amount",
+            "outcome": -2 },{
+            "title": "Give a little amount",
+            "outcome": -1 },{
+            "title": "Decline to donate",
+            "outcome": 0 }],
+        "status": ["happiness"]
+    },
+    {
+        "id": "Wedding",
+        "title": "You are going to a wedding but its out of state",
+        "choiceArr": [{
+            "title": "Take a plane",
+            "outcome": -3 },{
+            "title": "Take a train",
+            "outcome": -2 },{
+            "title": "Carpool",
+            "outcome": -1 }],
+        "status": ["happiness"]
+    },
+    {
+        "id": "Forgot Lunch",
+        "title": "You forgot to make a lunch. Do you buy something?",
+        "choiceArr": [{
+            "title": "Buy a sandwich",
+            "outcome": -2 },{
+            "title": "Get a bag of chips",
+            "outcome": -1 },{
+            "title": "Pass on lunch",
+            "outcome": 0 }],
+        "status": ["hunger"]
+    },
+    {
+        "id": "Tire Nail",
+        "title": "Driving to a party, you get a nail in your tire",
+        "choiceArr": [{
+            "title": "Buy a new tire",
+            "outcome": -3 },{
+            "title": "Get a tire plug set",
+            "outcome": -1 },{
+            "title": "Just keep driving",
+            "outcome": 0 }],
+        "status": ["happiness"]
+    },
+    {
+        "id": "Cold",
+        "title": "You come down with a mild cold",
+        "choiceArr": [{
+            "title": "Go to the doctor",
+            "outcome": -3 },{
+            "title": "Get some over the counter medicine",
+            "outcome": -1 },{
+            "title": "Try and tough it out",
+            "outcome": 0 }],
+        "status": ["health", "happiness"]
+    },
+    {
+        "id": "Soap",
+        "title": "You've ran out of soap for your cleaning needs",
+        "choiceArr": [{
+            "title": "Buy an expensive brand",
+            "outcome": -3 },{
+            "title": "Get your usual brand",
+            "outcome": -2 },{
+            "title": "Get the cheap brand",
+            "outcome": -1 }],
+        "status": ["health", "happiness"]
+    }
 ]
 

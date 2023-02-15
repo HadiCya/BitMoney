@@ -66,7 +66,7 @@ struct GameView: View {
                         .font(Font.custom("PressStartK", size: 300))
                          .frame(width: geo.size.width * 0.8, height: geo.size.height * 0.15)
                          .minimumScaleFactor(0.01)
-                        .foregroundColor(gamestate.scenario.status?.color)
+                        //.foregroundColor(gamestate.scenario.status[0].color)
                     
                     ForEach(gamestate.scenario.choiceArr, id: \.title) { choice in
                         Button(action: {gamestate.update(money: choice.outcome)})

@@ -32,12 +32,13 @@ class GameState : ObservableObject {
     }
     
     func update(money: Int){
-        if let unwrappedStatus = self.scenario.status {
-            self.statuses[unwrappedStatus]! -= money + 1
-            if self.statuses[unwrappedStatus]! <= 0 {
+        for status in self.scenario.status{
+            self.statuses[status]! -= money + 1
+            if self.statuses[status]! <= 0 {
                 self.statuses[Status.health]! -= 1
             }
         }
+        
         self.money += money
         if (self.money <= 0 || self.statuses[Status.health]! <= 0) {
             endgame()
