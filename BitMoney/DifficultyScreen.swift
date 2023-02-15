@@ -63,8 +63,8 @@ struct DifficultyScreen: View {
                            
                             Button(action: {
                                 gamestate.appState = .game     
-                                gamestate.setMoney(money: Int(sliderMath * (currentValue / (geo.size.width * 0.85)) + 5))
-                                gamestate.scoreMultiplier = abs(moneyMath * (currentValue / (geo.size.width * 0.85)) - 2)
+                                gamestate.setMoney(money: Int(moneyMath * (currentValue / (geo.size.width * 0.85)) + 5))
+                                gamestate.scoreMultiplier = abs(sliderMath * (currentValue / (geo.size.width * 0.85)) - 2)
                             })
                             {
                                 Image("BlankButton")
