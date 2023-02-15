@@ -27,7 +27,7 @@ class GameState : ObservableObject {
     func setMoney(money: Int){
         self.money = money
         for status in Status.allCases {
-            statuses[status] = self.money
+            statuses[status] = 12
         }
     }
     

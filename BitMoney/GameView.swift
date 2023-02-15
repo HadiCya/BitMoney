@@ -107,7 +107,7 @@ func dollaSigns(money: Int) -> String{
     } else {
         return dolla
     }
-    (0...abs(money)).forEach { val in
+    (1...abs(money)).forEach { val in
         dolla += "$"
     }
     dolla += ")"
