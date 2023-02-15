@@ -27,10 +27,11 @@ struct TitleScreen: View {
                         .scaledToFit()
                         .padding(geo.size.width * 0.07)
                     Text("BitMoney")
-                        .font(Font.custom("PressStartK", size: geo.size.width * 0.12))
-                        .padding(geo.size.width * 0.02)
-                        .foregroundColor(.black)
-                      Button(action: {
+                        .font(Font.custom("PressStartK", size: 300))
+                         .foregroundColor(.black)
+                         .frame(width: geo.size.width * 0.8, height: geo.size.height * 0.1)
+                         .minimumScaleFactor(0.01)
+                    Button(action: {
                           gamestate.appState = .difficulty
                      })
                     {
@@ -40,9 +41,10 @@ struct TitleScreen: View {
                             .frame(width: geo.size.width * 0.9)
                             .overlay(
                                 Text("Start")
-                                    .font(Font.custom("PressStartK", size: geo.size.width * 0.08))
-                                    .foregroundColor(.black)
-                                    .padding(geo.size.width * 0.04)
+                                    .font(Font.custom("PressStartK", size: 300))
+                                     .foregroundColor(.black)
+                                     .frame(width: geo.size.width * 0.7, height: geo.size.height * 0.05)
+                                     .minimumScaleFactor(0.01)
                             )
                     }
                     Button(action: {
@@ -55,9 +57,10 @@ struct TitleScreen: View {
                           .frame(width: geo.size.width * 0.9)
                           .overlay(
                               Text("Resume")
-                                  .font(Font.custom("PressStartK", size: geo.size.width * 0.08))
-                                  .foregroundColor(.black)
-                                  .padding(geo.size.width * 0.04)
+                                .font(Font.custom("PressStartK", size: 300))
+                                 .foregroundColor(.black)
+                                 .frame(width: geo.size.width * 0.7, height: geo.size.height * 0.05)
+                                 .minimumScaleFactor(0.01)
                           )
                   }
                     
@@ -67,9 +70,10 @@ struct TitleScreen: View {
                         .frame(width: geo.size.width * 0.9)
                         .overlay(
                             Text("Settings")
-                                .font(Font.custom("PressStartK", size: geo.size.width * 0.08))
-                                .foregroundColor(.black)
-                                .padding(geo.size.width * 0.04)
+                                .font(Font.custom("PressStartK", size: 300))
+                                 .foregroundColor(.black)
+                                 .frame(width: geo.size.width * 0.7, height: geo.size.height * 0.05)
+                                 .minimumScaleFactor(0.01)
                         )
                 }
             }

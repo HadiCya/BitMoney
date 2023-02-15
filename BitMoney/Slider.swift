@@ -20,6 +20,7 @@ struct SliderView1: View {
             
             
             
+            
             ZStack {
                 Image("LineWithArrows")
                     .resizable()

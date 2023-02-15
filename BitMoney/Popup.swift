@@ -26,16 +26,20 @@ struct Popup: View {
                         VStack{
                             HStack{
                                 Text("Status")
-                                    .font(Font.custom("PressStartK", size: geo.size.width * 0.08))
-                                    .foregroundColor(.black)
-                                    .frame(maxWidth: .infinity, alignment: .top)
-                                    .padding(geo.size.width * 0.07)
+                                    .multilineTextAlignment(.center)
+                                    .font(Font.custom("PressStartK", size: 300))
+                                     .foregroundColor(.black)
+                                     .frame(width: geo.size.width * 0.8, height: geo.size.height * 0.065)
+                                     .minimumScaleFactor(0.01)
+                                     .padding(geo.size.width * 0.05)
                             }
                             Text("You are feeling \("hungry").")
-                                .font(Font.custom("PressStartK", size: geo.size.width * 0.07))
-                                .foregroundColor(.black)
-                                .frame(maxWidth: .infinity, alignment: .top)
-                                .padding(geo.size.width * 0.02)
+                                .multilineTextAlignment(.center)
+                                .font(Font.custom("PressStartK", size: 300))
+                                 .foregroundColor(.black)
+                                 .frame(width: geo.size.width * 0.8, height: geo.size.height * 0.05)
+                                 .minimumScaleFactor(0.01)
+                                 .padding(geo.size.width * 0.05)
                             Spacer()
                         }
                     )

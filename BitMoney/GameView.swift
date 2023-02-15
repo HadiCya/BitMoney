@@ -37,16 +37,19 @@ struct GameView: View {
                               }
                                 
                                 Text("Day \(gamestate.day)")
-                                    .font(Font.custom("PressStartK", size: geo.size.width * 0.04))
+                                   .font(Font.custom("PressStartK", size: 300))
                                     .foregroundColor(.black)
-                                    .frame(width: geo.size.width * 0.36, height: geo.size.height * 0.1)
+                                    .frame(width: geo.size.width * 0.36, height: geo.size.height * 0.03)
+                                    .minimumScaleFactor(0.01)
                                 Image("MoneyCountBox")
                                     .resizable()
                                     .scaledToFit()
                                     .frame(width: geo.size.width * 0.27, height: geo.size.height * 0.1)
                                     .overlay(
                                         Text("$\(gamestate.money)")
-                                            .font(Font.custom("PressStartK", size: geo.size.width * 0.05))
+                                            .font(Font.custom("PressStartK", size: 300))
+                                            .frame(width: geo.size.width * 0.2, height: geo.size.height * 0.2)
+                                            .minimumScaleFactor(0.01)
                                             .foregroundColor(.black)
                                     )
                             }
@@ -60,8 +63,9 @@ struct GameView: View {
                         .resizable()
                         .scaledToFit()
                     Text(gamestate.scenario.title)
-                        .font(Font.custom("PressStartK", size: geo.size.width * 0.05))
-                        .padding(geo.size.width * 0.05)
+                        .font(Font.custom("PressStartK", size: 300))
+                         .frame(width: geo.size.width * 0.8, height: geo.size.height * 0.15)
+                         .minimumScaleFactor(0.01)
                         .foregroundColor(gamestate.scenario.status?.color)
                     
                     ForEach(gamestate.scenario.choiceArr, id: \.title) { choice in
@@ -73,9 +77,11 @@ struct GameView: View {
                                 .frame(width: geo.size.width * 0.9)
                                 .overlay(
                                     Text(choice.title + " (\(choice.outcome))")
-                                        .font(Font.custom("PressStartK", size: geo.size.width * 0.04))
-                                        .foregroundColor(.black)
-                                        .padding(geo.size.width * 0.04)
+                                        .font(Font.custom("PressStartK", size: 300))
+                                         .foregroundColor(.black)
+                                         .frame(width: geo.size.width * 0.7, height: geo.size.height * 0.06)
+                                         .minimumScaleFactor(0.01)
+                                    
                                 )
                            
                             }
@@ -83,8 +89,8 @@ struct GameView: View {
                         
                     }
                 }
-//                Popup()
-//                    .frame(width: geo.size.width)
+                Popup()
+                  .frame(width: geo.size.width)
                 
             }
             

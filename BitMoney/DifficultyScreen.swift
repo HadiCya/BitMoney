@@ -14,6 +14,8 @@ struct DifficultyScreen: View {
     @State private var currentValue = 0.0
     @ObservedObject var gamestate: GameState
     @State private var isActive : Bool = false
+    @State private var sliderMath = 2.0 + (2.0 / 9.0)
+    @State private var moneyMath = 33.0 + (1.0 / 3.0)
     var body: some View {
         GeometryReader { geo in
             ZStack (alignment: .top){
@@ -24,25 +26,33 @@ struct DifficultyScreen: View {
                     .opacity(1.0)
                 VStack {
                     Text("Difficulty\n\n\("N/A")")
-                        .font(Font.custom("PressStartK", size: geo.size.width * 0.08))
-                        .foregroundColor(.black)
-                        .frame(maxWidth: geo.size.width, alignment: .center)
-                        .padding(.bottom, geo.size.height * 0.02)
                         .multilineTextAlignment(.center)
-                    Text("Score Multiplier\n\n\(abs(currentValue / 150 - 2), specifier: "%.2f")")
-                        .font(Font.custom("PressStartK", size: geo.size.width * 0.08))
-                        .foregroundColor(.black)
-                        .frame(maxWidth: geo.size.width, alignment: .center)
-                        .padding(.bottom, geo.size.height * 0.02)
+                        .font(Font.custom("PressStartK", size: 300))
+                         .foregroundColor(.black)
+                         .frame(width: geo.size.width * 0.9, height: geo.size.height * 0.12)
+                         .minimumScaleFactor(0.01)
+                         .padding(geo.size.width * 0.05)
+                    Text("Score Multiplier\n\n\(abs(sliderMath * (currentValue / (geo.size.width * 0.85)) - 2), specifier: "%.2f")")
                         .multilineTextAlignment(.center)
+                        .font(Font.custom("PressStartK", size: 300))
+                         .foregroundColor(.black)
+                         .frame(width: geo.size.width * 0.9, height: geo.size.height * 0.12)
+                         .minimumScaleFactor(0.01)
+                         .padding(geo.size.width * 0.05)
                     Text("Starting Cash")
-                        .font(Font.custom("PressStartK", size: geo.size.width * 0.08))
-                        .foregroundColor(.black)
                         .multilineTextAlignment(.center)
+                        .font(Font.custom("PressStartK", size: 300))
+                         .foregroundColor(.black)
+                         .frame(width: geo.size.width * 0.9, height: geo.size.height * 0.08)
+                         .minimumScaleFactor(0.01)
 
-                    Text("\n$\(Int(currentValue / 10 + 5))")
-                        .font(Font.custom("PressStartK", size: geo.size.width * 0.08))
-                            .foregroundColor(.black)
+                    Text("\n$\(Int(moneyMath * (currentValue / (geo.size.width * 0.85)) + 5))")
+                        .multilineTextAlignment(.center)
+                        .font(Font.custom("PressStartK", size: 300))
+                         .foregroundColor(.black)
+                         .frame(width: geo.size.width * 0.9, height: geo.size.height * 0.08)
+                         .minimumScaleFactor(0.01)
+                         .padding(geo.size.width * 0.05)
 
                     SliderView1(value: $currentValue)
                        .frame(width: geo.size.width * 0.9)
@@ -53,8 +63,8 @@ struct DifficultyScreen: View {
                            
                             Button(action: {
                                 gamestate.appState = .game     
-                                gamestate.setMoney(money: Int((currentValue / 10 + 5)))
-                                gamestate.scoreMultiplier = (abs(currentValue / 150 - 2))
+                                gamestate.setMoney(money: Int(sliderMath * (currentValue / (geo.size.width * 0.85)) + 5))
+                                gamestate.scoreMultiplier = abs(moneyMath * (currentValue / (geo.size.width * 0.85)) - 2)
                             })
                             {
                                 Image("BlankButton")
@@ -64,9 +74,12 @@ struct DifficultyScreen: View {
                                     
                                     .overlay(
                                         Text("Next")
-                                            .font(Font.custom("PressStartK", size: geo.size.width * 0.08))
-                                            .foregroundColor(.black)
-                                            .padding(geo.size.width * 0.04)
+                                            .multilineTextAlignment(.center)
+                                            .font(Font.custom("PressStartK", size: 300))
+                                             .foregroundColor(.black)
+                                             .frame(width: geo.size.width * 0.7, height: geo.size.height * 0.05)
+                                             .minimumScaleFactor(0.01)
+                                             .padding(geo.size.width * 0.05)
                                     )
                             }
                             Button(action: {
@@ -80,9 +93,12 @@ struct DifficultyScreen: View {
                                     
                                     .overlay(
                                         Text("Back")
-                                            .font(Font.custom("PressStartK", size: geo.size.width * 0.08))
-                                            .foregroundColor(.black)
-                                            .padding(geo.size.width * 0.04)
+                                            .multilineTextAlignment(.center)
+                                            .font(Font.custom("PressStartK", size: 300))
+                                             .foregroundColor(.black)
+                                             .frame(width: geo.size.width * 0.7, height: geo.size.height * 0.05)
+                                             .minimumScaleFactor(0.01)
+                                             .padding(geo.size.width * 0.05)
                                     )
                             }
                         }
