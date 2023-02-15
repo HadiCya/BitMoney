@@ -66,7 +66,7 @@ struct GameView: View {
                         .font(Font.custom("PressStartK", size: 300))
                          .frame(width: geo.size.width * 0.8, height: geo.size.height * 0.15)
                          .minimumScaleFactor(0.01)
-                        //.foregroundColor(gamestate.scenario.status[0].color)
+                         .foregroundColor(.black)
                     
                     ForEach(gamestate.scenario.choiceArr, id: \.title) { choice in
                         Button(action: {gamestate.update(money: choice.outcome)})
@@ -76,7 +76,7 @@ struct GameView: View {
                                 .scaledToFit()
                                 .frame(width: geo.size.width * 0.9)
                                 .overlay(
-                                    Text(choice.title + " (\(choice.outcome))")
+                                    Text(choice.title + " \(dollaSigns(money: choice.outcome))")
                                         .font(Font.custom("PressStartK", size: 300))
                                          .foregroundColor(.black)
                                          .frame(width: geo.size.width * 0.7, height: geo.size.height * 0.06)
@@ -98,6 +98,21 @@ struct GameView: View {
     }
 }
 
+func dollaSigns(money: Int) -> String{
+    var dolla = ""
+    if money > 0 {
+        dolla = "(+"
+    } else if money < 0 {
+        dolla = "(-"
+    } else {
+        return dolla
+    }
+    (0...abs(money)).forEach { val in
+        dolla += "$"
+    }
+    dolla += ")"
+    return dolla
+}
 
 struct GameView_Previews: PreviewProvider {
     static var previews: some View {
