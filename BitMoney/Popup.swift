@@ -9,11 +9,11 @@ import Foundation
 import SwiftUI
 
 struct Popup: View {
-    @Binding var showPopup: Bool
+    @Binding var showPopup: String
     var body: some View {
         GeometryReader { geo in
                 Button(action: {
-                    showPopup = false
+                    showPopup = ""
                 })
                 {
                     ZStack{
@@ -39,7 +39,7 @@ struct Popup: View {
                                          .minimumScaleFactor(0.01)
                                          .padding(geo.size.width * 0.05)
                                 }
-                                Text("You are feeling \("hungry").")
+                                Text("\(showPopup)")
                                     .multilineTextAlignment(.center)
                                     .font(Font.custom("PressStartK", size: 300))
                                      .foregroundColor(.black)
@@ -55,6 +55,8 @@ struct Popup: View {
         }
     }
 }
+
+
 
 //
 //struct Popup_Previews: PreviewProvider {

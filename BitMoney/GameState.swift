@@ -15,6 +15,7 @@ class GameState : ObservableObject {
     @Published var day: Int = 1
     @Published var scenario: Scenario
     @Published var scoreMultiplier: Double = 1
+    @Published var showPopUp: String = ""
     var scenarios: [Scenario]
     var statuses: [Status: Int] = [:]
 
@@ -32,10 +33,7 @@ class GameState : ObservableObject {
     }
     
     func update(money: Int){
-//        for i in self.statuses{
-//            print(String(i.key) + "\t" + String(i.value) + "\t" + String(self.statuses[i].st))
-//        }
-//        print("MONEY: " + String (self.money))
+        
         for status in self.scenario.status{
             self.statuses[status]! -= money + 1
             if self.statuses[status]! <= 0 {
@@ -55,10 +53,32 @@ class GameState : ObservableObject {
         }
         self.scenario = scenarios[rand]
         self.day += 1
+        if (self.day % 3 == 0){
+            for status in Status.allCases{
+                if self.statuses[status]! < 5 {
+                    self.showPopUp += "Low \(status), "
+                }
+            }
+        }
+        self.showPopUp = String(self.showPopUp.dropLast(2))
         if (self.day % 7 == 0) {
             self.money += 4
+            self.showPopUp = "Payday! +$$$$"
         }
+        
     }
+    
+//    func statusEffects(statuses: [Status:Int]) -> String{
+//        var output = "You are feeling "
+//        for status in Status.allCases{
+//            if statuses[status]! <= 5 {
+//                output += "\(status) "
+//            }
+//        }
+//        output = String(output.dropLast())
+//        output += "."
+//        return output
+//    }
     
     func endgame(){
         appState = AppState.end

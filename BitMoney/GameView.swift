@@ -10,7 +10,6 @@ import CoreData
 
 struct GameView: View {
     @ObservedObject var gamestate: GameState
-    @State var showPopUp: Bool = false
     var body: some View {
         GeometryReader { geo in
             ZStack{
@@ -28,8 +27,8 @@ struct GameView: View {
                         ZStack(alignment: .topLeading) {
                             HStack() {
                                 Button(action: {
-                                //   gamestate.appState = .title
-                                    showPopUp = true
+                                   gamestate.appState = .title
+                                    //showPopUp = true
                                     
                                })
                               {
@@ -65,9 +64,9 @@ struct GameView: View {
                     Image("Logo")
                         .resizable()
                         .scaledToFit()
-//                    Text("HEALTH of my low IQ " + String(gamestate.statuses[Status.health].unsafelyUnwrapped))
-//                    Text("Fatness " + String(gamestate.statuses[Status.hunger].unsafelyUnwrapped))
-//                    Text("Lonler " + String(gamestate.statuses[Status.social].unsafelyUnwrapped))
+//                    Text("Health " + String(gamestate.statuses[Status.health].unsafelyUnwrapped))
+//                    Text("Hunger " + String(gamestate.statuses[Status.hunger].unsafelyUnwrapped))
+//                    Text("Social " + String(gamestate.statuses[Status.social].unsafelyUnwrapped))
 //                    Text("Happiness " + String(gamestate.statuses[Status.happiness].unsafelyUnwrapped))
                     Text(gamestate.scenario.title)
                         .font(Font.custom("PressStartK", size: 300))
@@ -99,8 +98,8 @@ struct GameView: View {
             }
             
             
-            if $showPopUp.wrappedValue {
-                      Popup(showPopup: $showPopUp)
+            if gamestate.showPopUp != "" {
+                Popup(showPopup: $gamestate.showPopUp)
                   }
             
         }
