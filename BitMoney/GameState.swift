@@ -32,6 +32,10 @@ class GameState : ObservableObject {
     }
     
     func update(money: Int){
+//        for i in self.statuses{
+//            print(String(i.key) + "\t" + String(i.value) + "\t" + String(self.statuses[i].st))
+//        }
+//        print("MONEY: " + String (self.money))
         for status in self.scenario.status{
             self.statuses[status]! -= money + 1
             if self.statuses[status]! <= 0 {

@@ -3,7 +3,7 @@
 //  BitMoney
 //
 //  Created by Hadi Chaaban on 2/3/23.
-//
+//  Edited by Zanon
 
 import SwiftUI
 import CoreData
@@ -27,7 +27,7 @@ struct GameView: View {
                         ZStack(alignment: .topLeading) {
                             HStack() {
                                 Button(action: {
-                                    gamestate.appState = .title
+                                   gamestate.appState = .title
                                })
                               {
                                   Image("MenuButton")
@@ -62,6 +62,10 @@ struct GameView: View {
                     Image("Logo")
                         .resizable()
                         .scaledToFit()
+//                    Text("HEALTH of my low IQ " + String(gamestate.statuses[Status.health].unsafelyUnwrapped))
+//                    Text("Fatness " + String(gamestate.statuses[Status.hunger].unsafelyUnwrapped))
+//                    Text("Lonler " + String(gamestate.statuses[Status.social].unsafelyUnwrapped))
+//                    Text("Happiness " + String(gamestate.statuses[Status.happiness].unsafelyUnwrapped))
                     Text(gamestate.scenario.title)
                         .font(Font.custom("PressStartK", size: 300))
                          .frame(width: geo.size.width * 0.8, height: geo.size.height * 0.15)
@@ -89,10 +93,9 @@ struct GameView: View {
                         
                     }
                 }
-//                Popup()
-//                  .frame(width: geo.size.width)
                 
             }
+
             
         }
     }
