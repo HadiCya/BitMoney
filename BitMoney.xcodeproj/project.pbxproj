@@ -21,7 +21,6 @@
 		0FF09047298D46030059C09E /* BitMoney.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0FF09045298D46030059C09E /* BitMoney.xcdatamodeld */; };
 		0FF09052298D68290059C09E /* scenarios.json in Resources */ = {isa = PBXBuildFile; fileRef = 0FF09051298D68290059C09E /* scenarios.json */; };
 		BE33EF2B2992E8460027B520 /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE33EF2A2992E8460027B520 /* GameState.swift */; };
-		BE6A526E299E65F1001C5EF5 /* PopupOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6A526D299E65F1001C5EF5 /* PopupOverlay.swift */; };
 		BE99D37529953F7900DE4FCE /* Slider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE99D37429953F7900DE4FCE /* Slider.swift */; };
 		BEACACEB2992A8FC0081BE84 /* EndScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEACACEA2992A8FC0081BE84 /* EndScreen.swift */; };
 		BECA73A42993EC9E005983F8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECA73A32993EC9E005983F8 /* ContentView.swift */; };
@@ -45,7 +44,6 @@
 		0FF09048298D46030059C09E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0FF09051298D68290059C09E /* scenarios.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = scenarios.json; sourceTree = "<group>"; };
 		BE33EF2A2992E8460027B520 /* GameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameState.swift; sourceTree = "<group>"; };
-		BE6A526D299E65F1001C5EF5 /* PopupOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupOverlay.swift; sourceTree = "<group>"; };
 		BE99D37429953F7900DE4FCE /* Slider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slider.swift; sourceTree = "<group>"; };
 		BEACACEA2992A8FC0081BE84 /* EndScreen.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = EndScreen.swift; sourceTree = "<group>"; wrapsLines = 1; };
 		BECA73A32993EC9E005983F8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -101,7 +99,6 @@
 				BECA73A52993F392005983F8 /* DifficultyScreen.swift */,
 				BE99D37429953F7900DE4FCE /* Slider.swift */,
 				0F1FC011299A9CD3008D4CCF /* Popup.swift */,
-				BE6A526D299E65F1001C5EF5 /* PopupOverlay.swift */,
 			);
 			path = BitMoney;
 			sourceTree = "<group>";
@@ -194,7 +191,6 @@
 				BECA73A62993F392005983F8 /* DifficultyScreen.swift in Sources */,
 				0F045B162992A3FE00E01F19 /* TitleScreen.swift in Sources */,
 				0FF09044298D46030059C09E /* Persistence.swift in Sources */,
-				BE6A526E299E65F1001C5EF5 /* PopupOverlay.swift in Sources */,
 				0F1FC012299A9CD3008D4CCF /* Popup.swift in Sources */,
 				0FF0903D298D46010059C09E /* GameView.swift in Sources */,
 				BECA73A42993EC9E005983F8 /* ContentView.swift in Sources */,

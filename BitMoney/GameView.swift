@@ -10,6 +10,7 @@ import CoreData
 
 struct GameView: View {
     @ObservedObject var gamestate: GameState
+    @State var showPopUp: Bool = false
     var body: some View {
         GeometryReader { geo in
             ZStack{
@@ -27,7 +28,9 @@ struct GameView: View {
                         ZStack(alignment: .topLeading) {
                             HStack() {
                                 Button(action: {
-                                   gamestate.appState = .title
+                                //   gamestate.appState = .title
+                                    showPopUp = true
+                                    
                                })
                               {
                                   Image("MenuButton")
@@ -93,11 +96,15 @@ struct GameView: View {
                         
                     }
                 }
-                
             }
-
+            
+            
+            if $showPopUp.wrappedValue {
+                      Popup(showPopup: $showPopUp)
+                  }
             
         }
+       
     }
 }
 

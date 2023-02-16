@@ -9,48 +9,56 @@ import Foundation
 import SwiftUI
 
 struct Popup: View {
+    @Binding var showPopup: Bool
     var body: some View {
         GeometryReader { geo in
-            ZStack{
-                Rectangle()
-                    .ignoresSafeArea(.all)
-                    .opacity(0.5)
-                
-                Image("Smallpopup")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: geo.size.width * 0.95)
-                
-                    .overlay(
-                        
-                        VStack{
-                            HStack{
-                                Text("Status")
+                Button(action: {
+                    showPopup = false
+                })
+                {
+                    ZStack{
+                    Rectangle()
+                        .ignoresSafeArea(.all)
+                        .opacity(0.5)
+                        .foregroundColor(.black)
+                    
+                    Image("Smallpopup")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: geo.size.width * 0.95)
+                    
+                        .overlay(
+                            
+                            VStack{
+                                HStack{
+                                    Text("Status")
+                                        .multilineTextAlignment(.center)
+                                        .font(Font.custom("PressStartK", size: 300))
+                                         .foregroundColor(.black)
+                                         .frame(width: geo.size.width * 0.8, height: geo.size.height * 0.065)
+                                         .minimumScaleFactor(0.01)
+                                         .padding(geo.size.width * 0.05)
+                                }
+                                Text("You are feeling \("hungry").")
                                     .multilineTextAlignment(.center)
                                     .font(Font.custom("PressStartK", size: 300))
                                      .foregroundColor(.black)
-                                     .frame(width: geo.size.width * 0.8, height: geo.size.height * 0.065)
+                                     .frame(width: geo.size.width * 0.8, height: geo.size.height * 0.05)
                                      .minimumScaleFactor(0.01)
                                      .padding(geo.size.width * 0.05)
+                                Spacer()
                             }
-                            Text("You are feeling \("hungry").")
-                                .multilineTextAlignment(.center)
-                                .font(Font.custom("PressStartK", size: 300))
-                                 .foregroundColor(.black)
-                                 .frame(width: geo.size.width * 0.8, height: geo.size.height * 0.05)
-                                 .minimumScaleFactor(0.01)
-                                 .padding(geo.size.width * 0.05)
-                            Spacer()
-                        }
-                    )
+                        )
+                    }
+                    
             }
         }
     }
 }
 
-
-struct Popup_Previews: PreviewProvider {
-    static var previews: some View {
-        Popup()
-    }
-}
+//
+//struct Popup_Previews: PreviewProvider {
+//    static var previews: some View {
+//        Popup()
+//    }
+//}
