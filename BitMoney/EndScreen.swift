@@ -34,7 +34,7 @@ struct EndScreen: View {
                          .frame(width: geo.size.width * 0.9, height: geo.size.height * 0.12)
                          .minimumScaleFactor(0.01)
                          .padding(geo.size.width * 0.05)
-                    Text("Score:\n\(Double(gamestate.day) * 100.0 * gamestate.scoreMultiplier, specifier: "%.f")")
+                    Text("Score:\n\(gamestate.score)")
                         .multilineTextAlignment(.center)
                         .font(Font.custom("PressStartK", size: 300))
                          .foregroundColor(.black)

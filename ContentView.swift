@@ -9,18 +9,19 @@ import SwiftUI
 
 struct ContentView: View {
     @StateObject var gameState = GameState()
+    @StateObject var musicPlayer = MusicPlayer()
     var body: some View {
         switch gameState.appState {
         case .title:
             TitleScreen(gamestate: gameState)
         case .game:
-            GameView(gamestate: gameState)
+            GameView(gamestate: gameState, musicplayer: musicPlayer)
         case .end:
             EndScreen(gamestate: gameState)
         case .difficulty:
             DifficultyScreen(gamestate: gameState)
         case .settings:
-            SettingsPage(gamestate: gameState)
+            SettingsPage(gamestate: gameState, musicplayer: musicPlayer)
         case .leaderboard:
             LeaderboardView(gamestate: gameState)
         

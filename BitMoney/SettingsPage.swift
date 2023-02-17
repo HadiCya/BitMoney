@@ -9,6 +9,7 @@ import SwiftUI
 
 struct SettingsPage: View {
     @ObservedObject var gamestate: GameState
+    @ObservedObject var musicplayer: MusicPlayer
     var body: some View {
         GeometryReader { geo in
             ZStack (alignment: .top){
@@ -26,7 +27,7 @@ struct SettingsPage: View {
                          .minimumScaleFactor(0.01)
                          .padding(geo.size.width * 0.05)
                     Button(action: {
-                        MusicPlayer.shared.stopBackgroundMusic()
+                        musicplayer.music = !musicplayer.music
                     })
                     {
                         Image("BlankButton")
@@ -35,7 +36,7 @@ struct SettingsPage: View {
                             .frame(width: geo.size.width * 0.9)
                             
                             .overlay(
-                                Text("Music: \(gamestate.currGame)" as String)
+                                Text("Music: \(onOff(music: musicplayer.music))" as String)
                                     .multilineTextAlignment(.center)
                                     .font(Font.custom("PressStartK", size: 300))
                                      .foregroundColor(.black)
@@ -81,6 +82,6 @@ func onOff(music: Bool) -> String{
 
 struct SettingsPage_Previews: PreviewProvider {
     static var previews: some View {
-        SettingsPage(gamestate: GameState())
+        SettingsPage(gamestate: GameState(), musicplayer: MusicPlayer())
     }
 }

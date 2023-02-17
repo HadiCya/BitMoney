@@ -8,10 +8,9 @@
 import Foundation
 import AVFoundation
 
-class MusicPlayer {
-    static let shared = MusicPlayer()
+class MusicPlayer: ObservableObject{
     var audioPlayer: AVAudioPlayer?
-    var music: Bool = true
+    @Published var music: Bool = true
 
     func startBackgroundMusic() {
         if music {
@@ -31,7 +30,6 @@ class MusicPlayer {
     }
     
     func stopBackgroundMusic() {
-        music = !music
         guard let audioPlayer = audioPlayer else { return }
         audioPlayer.stop()
     }

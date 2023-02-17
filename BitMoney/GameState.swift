@@ -17,7 +17,7 @@ class GameState : ObservableObject {
     @Published var currGame: Bool = false
     @Published var gameCenterUser: Bool = false
     var score: Int {
-        return (self.day) * 100 * Int(self.scoreMultiplier)
+        return Int(Double(self.day) * 100.0 * self.scoreMultiplier)
     }
     var scenarios: [Scenario]
     var statuses: [Status: Int] = [:]
@@ -36,7 +36,7 @@ class GameState : ObservableObject {
     
     func setMoney(money: Int){
         currGame = true
-        MusicPlayer.shared.startBackgroundMusic()
+        
         self.money = money
         for status in Status.allCases {
             statuses[status] = 12

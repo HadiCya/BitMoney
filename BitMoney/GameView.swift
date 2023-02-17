@@ -10,6 +10,7 @@ import CoreData
 
 struct GameView: View {
     @ObservedObject var gamestate: GameState
+    @ObservedObject var musicplayer: MusicPlayer
     var body: some View {
         GeometryReader { geo in
             ZStack{
@@ -95,6 +96,10 @@ struct GameView: View {
                         
                     }
                 }
+            }.onAppear {
+                musicplayer.startBackgroundMusic()
+            }.onDisappear {
+                musicplayer.stopBackgroundMusic()
             }
             
             
@@ -123,14 +128,14 @@ func dollaSigns(money: Int) -> String{
     return dolla
 }
 
-struct GameView_Previews: PreviewProvider {
-    static var previews: some View {
-        GameView(gamestate: GameState())
-            .previewDevice(/*@START_MENU_TOKEN@*/"iPhone 11"/*@END_MENU_TOKEN@*/)
-        GameView(gamestate: GameState())
-            .previewDevice(/*@START_MENU_TOKEN@*/"iPhone 14 Pro Max"/*@END_MENU_TOKEN@*/)
-        GameView(gamestate: GameState())
-            .previewDevice(/*@START_MENU_TOKEN@*/"iPhone 14"/*@END_MENU_TOKEN@*/)
-            
-    }
-}
+//struct GameView_Previews: PreviewProvider {
+////    static var previews: some View {
+////        GameView(gamestate: GameState())
+////            .previewDevice(/*@START_MENU_TOKEN@*/"iPhone 11"/*@END_MENU_TOKEN@*/)
+//////        GameView(gamestate: GameState())
+//////            .previewDevice(/*@START_MENU_TOKEN@*/"iPhone 14 Pro Max"/*@END_MENU_TOKEN@*/)
+//////        GameView(gamestate: GameState())
+//////            .previewDevice(/*@START_MENU_TOKEN@*/"iPhone 14"/*@END_MENU_TOKEN@*/)
+////
+////    }
+//}

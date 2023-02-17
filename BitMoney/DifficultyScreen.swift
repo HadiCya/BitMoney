@@ -25,7 +25,7 @@ struct DifficultyScreen: View {
                     .frame(width: geo.size.width, height: geo.size.height, alignment: .center)
                     .opacity(1.0)
                 VStack {
-                    Text("Difficulty\n\n\("N/A")")
+                    Text("Difficulty\n\n\(calculateDifficulty(val: (Int(moneyMath * (currentValue / (geo.size.width * 0.85)) + 5))))")
                         .multilineTextAlignment(.center)
                         .font(Font.custom("PressStartK", size: 300))
                          .foregroundColor(.black)
@@ -109,6 +109,16 @@ struct DifficultyScreen: View {
         }
     }
     
+}
+
+func calculateDifficulty(val: Int) -> String{
+    if val > 25{
+        return "Easy"
+    }
+    if val > 15 {
+        return "Medium"
+    }
+    return "Hard"
 }
 struct DifficultyScreen_Previews: PreviewProvider {
     static var previews: some View {

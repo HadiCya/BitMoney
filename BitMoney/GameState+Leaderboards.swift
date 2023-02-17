@@ -35,19 +35,16 @@ extension GameState{
             var playersListTemp : [Player] = []
             let leaderboards = try await GKLeaderboard.loadLeaderboards(IDs: [leaderboardIdentifier])
             if let leaderboard = leaderboards.filter ({ $0.baseLeaderboardID == self.leaderboardIdentifier }).first {
-                let allPlayers = try await leaderboard.loadEntries(for: .global, timeScope: .allTime, range: NSRange(1...5))
+                let allPlayers = try await leaderboard.loadEntries(for: .global, timeScope: .allTime, range: NSRange(1...10))
                 if allPlayers.1.count > 0 {
                     for leaderboardEntry in allPlayers.1 {
                         playersListTemp.append(Player(name: leaderboardEntry.player.displayName, score:leaderboardEntry.formattedScore))
                                     print(playersListTemp)
-                        playersListTemp.sort{
-                            $0.score < $1.score
-                        }
+                        playersListTemp.sort(by: >)
                     }
                 }
             }
             playersList = playersListTemp
-            print(playersList)
             self.appState = .leaderboard
         }
     }
