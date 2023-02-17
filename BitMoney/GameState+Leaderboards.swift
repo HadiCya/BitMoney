@@ -40,11 +40,14 @@ extension GameState{
                     for leaderboardEntry in allPlayers.1 {
                         playersListTemp.append(Player(name: leaderboardEntry.player.displayName, score:leaderboardEntry.formattedScore))
                                     print(playersListTemp)
-                        playersListTemp.sort(by: >)
+//                        playersListTemp.sort(by: >)
                     }
                 }
             }
             playersList = playersListTemp
+            playersList = playersList.sorted {
+                $0.score < $1.score
+            }
             self.appState = .leaderboard
         }
     }

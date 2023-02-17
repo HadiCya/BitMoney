@@ -96,6 +96,7 @@ class GameState : ObservableObject {
         
         setScoreLeaderboard()
         //After you submit the score, populate the players list, only then you can log the playersList
+//        self.playersList.sort(by: >)
         appState = AppState.end
     }
 }
