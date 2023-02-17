@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		0F045B162992A3FE00E01F19 /* TitleScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F045B152992A3FE00E01F19 /* TitleScreen.swift */; };
 		0F1FC012299A9CD3008D4CCF /* Popup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1FC011299A9CD3008D4CCF /* Popup.swift */; };
+		0F74A292299FB5F100EC77F9 /* MusicPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F74A291299FB5F100EC77F9 /* MusicPlayer.swift */; };
+		0F74A294299FB6E100EC77F9 /* backgroundMusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0F74A293299FB6E100EC77F9 /* backgroundMusic.mp3 */; };
 		0FB8035729914B8200443007 /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB8035629914B8200443007 /* JSONParser.swift */; };
 		0FB8035B29928DD100443007 /* prstart.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0FB8035829928DD100443007 /* prstart.ttf */; };
 		0FB8035C29928DD100443007 /* prstartk.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0FB8035929928DD100443007 /* prstartk.ttf */; };
@@ -30,6 +32,8 @@
 /* Begin PBXFileReference section */
 		0F045B152992A3FE00E01F19 /* TitleScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleScreen.swift; sourceTree = "<group>"; };
 		0F1FC011299A9CD3008D4CCF /* Popup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Popup.swift; sourceTree = "<group>"; };
+		0F74A291299FB5F100EC77F9 /* MusicPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPlayer.swift; sourceTree = "<group>"; };
+		0F74A293299FB6E100EC77F9 /* backgroundMusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = backgroundMusic.mp3; sourceTree = "<group>"; };
 		0FB8035629914B8200443007 /* JSONParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONParser.swift; sourceTree = "<group>"; };
 		0FB8035829928DD100443007 /* prstart.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = prstart.ttf; sourceTree = "<group>"; };
 		0FB8035929928DD100443007 /* prstartk.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = prstartk.ttf; sourceTree = "<group>"; };
@@ -99,6 +103,8 @@
 				BECA73A52993F392005983F8 /* DifficultyScreen.swift */,
 				BE99D37429953F7900DE4FCE /* Slider.swift */,
 				0F1FC011299A9CD3008D4CCF /* Popup.swift */,
+				0F74A291299FB5F100EC77F9 /* MusicPlayer.swift */,
+				0F74A293299FB6E100EC77F9 /* backgroundMusic.mp3 */,
 			);
 			path = BitMoney;
 			sourceTree = "<group>";
@@ -170,6 +176,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0FB8035D29928DD100443007 /* license.txt in Resources */,
+				0F74A294299FB6E100EC77F9 /* backgroundMusic.mp3 in Resources */,
 				0FF09052298D68290059C09E /* scenarios.json in Resources */,
 				0FF09042298D46030059C09E /* Preview Assets.xcassets in Resources */,
 				0FF0903F298D46030059C09E /* Assets.xcassets in Resources */,
@@ -185,6 +192,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F74A292299FB5F100EC77F9 /* MusicPlayer.swift in Sources */,
 				0FF09047298D46030059C09E /* BitMoney.xcdatamodeld in Sources */,
 				BE99D37529953F7900DE4FCE /* Slider.swift in Sources */,
 				0FB8035729914B8200443007 /* JSONParser.swift in Sources */,

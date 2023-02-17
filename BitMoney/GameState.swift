@@ -16,6 +16,7 @@ class GameState : ObservableObject {
     @Published var scenario: Scenario
     @Published var scoreMultiplier: Double = 1
     @Published var showPopUp: String = ""
+    var currGame: Bool = false
     var scenarios: [Scenario]
     var statuses: [Status: Int] = [:]
 
@@ -23,9 +24,12 @@ class GameState : ObservableObject {
     init(){
         self.scenarios = Scenario.allScenarios.shuffled()
         self.scenario = self.scenarios[Int.random(in: 0..<scenarios.count)]
+        
     }
     
     func setMoney(money: Int){
+        currGame = true
+        MusicPlayer.shared.startBackgroundMusic()
         self.money = money
         for status in Status.allCases {
             statuses[status] = 12
@@ -81,6 +85,7 @@ class GameState : ObservableObject {
 //    }
     
     func endgame(){
+        currGame = false
         appState = AppState.end
     }
 }
