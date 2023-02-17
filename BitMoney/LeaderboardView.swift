@@ -11,7 +11,6 @@ struct LeaderboardView: View {
     @ObservedObject var gamestate: GameState
     var body: some View {
         GeometryReader { geo in
-            ScrollView{
                 ZStack (alignment: .top){
                     Image("Background")
                         .scaledToFit()
@@ -29,6 +28,7 @@ struct LeaderboardView: View {
                         Image("Line")
                             .resizable()
                             .scaledToFit()
+                        ScrollView{
                         ForEach(gamestate.playersList, id: \.id) { player in
                             Text("\(String(player.name.prefix(8))) \(player.score)")
                                     .multilineTextAlignment(.center)
