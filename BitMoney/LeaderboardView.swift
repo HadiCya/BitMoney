@@ -29,13 +29,16 @@ struct LeaderboardView: View {
                         Image("Line")
                             .resizable()
                             .scaledToFit()
-                        Text("\(String(gamestate.playersList[0].name.prefix(8))) \(gamestate.playersList[0].score)")
-                                .multilineTextAlignment(.center)
-                                .font(Font.custom("PressStartK", size: 300))
-                                .foregroundColor(.black)
-                                .frame(width: geo.size.width * 0.9, height: geo.size.height * 0.06)
-                                .minimumScaleFactor(0.01)
-                                .textCase(.uppercase)
+                        ForEach(gamestate.playersList, id: \.id) { player in
+                            Text("\(String(player.name.prefix(8))) \(player.score)")
+                                    .multilineTextAlignment(.center)
+                                    .font(Font.custom("PressStartK", size: 300))
+                                    .foregroundColor(.black)
+                                    .frame(width: geo.size.width * 0.9, height: geo.size.height * 0.06)
+                                    .minimumScaleFactor(0.01)
+                                    .textCase(.uppercase)
+                        }
+                        
                         Button(action: {
                             gamestate.appState = .title
                         })

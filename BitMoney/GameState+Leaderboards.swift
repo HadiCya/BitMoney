@@ -8,7 +8,7 @@
 import Foundation
 import GameKit
 
-struct Player: Hashable, Comparable {
+struct Player: Hashable, Comparable, Identifiable {
     static func < (lhs: Player, rhs: Player) -> Bool {
         return rhs.score > lhs.score
     }
