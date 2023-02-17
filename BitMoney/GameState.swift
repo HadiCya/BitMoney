@@ -7,24 +7,31 @@
 
 import Foundation
 
-
 class GameState : ObservableObject {
-    
     @Published var appState = AppState.title
     @Published var money: Int = 12
     @Published var day: Int = 1
     @Published var scenario: Scenario
     @Published var scoreMultiplier: Double = 1
     @Published var showPopUp: String = ""
-    var currGame: Bool = false
+    @Published var currGame: Bool = false
+    var gameCenterUser: Bool = false
+    var score: Int {
+        return (self.day) * 100 * Int(self.scoreMultiplier)
+    }
     var scenarios: [Scenario]
     var statuses: [Status: Int] = [:]
+    
+//    @AppStorage("GKGameCenterViewControllerState") var gameCenterViewControllerState:GKGameCenterViewControllerState = .default
+//    @AppStorage("IsGameCenterActive") var isGKActive:Bool = false
+    var leaderboardIdentifier = "bitMoneyLeaderboard"
+    @Published var playersList: [Player] = []
 
     
     init(){
         self.scenarios = Scenario.allScenarios.shuffled()
         self.scenario = self.scenarios[Int.random(in: 0..<scenarios.count)]
-        
+        authenticateUser()
     }
     
     func setMoney(money: Int){
@@ -86,6 +93,9 @@ class GameState : ObservableObject {
     
     func endgame(){
         currGame = false
+        
+        setScoreLeaderboard()
+        //After you submit the score, populate the players list, only then you can log the playersList
         appState = AppState.end
     }
 }

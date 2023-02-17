@@ -65,7 +65,7 @@ struct TitleScreen: View {
                         
                     }
                     Button(action: {
-                        MusicPlayer.shared.stopBackgroundMusic()
+                        gamestate.appState = .settings
                     })
                     {
                         Image("BlankButton")
@@ -80,6 +80,27 @@ struct TitleScreen: View {
                                     .minimumScaleFactor(0.01)
                             )
                     }
+                    //IF GAME CENTER IS LOGGED IN:
+                    if gamestate.gameCenterUser{
+                        Button(action: {
+                            gamestate.loadLeaderboard()
+                        })
+                        {
+                            Image("BlankButton")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: geo.size.width * 0.9)
+                                .overlay(
+                                    Text("Leaderboard")
+                                        .font(Font.custom("PressStartK", size: 300))
+                                        .foregroundColor(.black)
+                                        .frame(width: geo.size.width * 0.7, height: geo.size.height * 0.05)
+                                        .minimumScaleFactor(0.01)
+                                )
+                        }
+                    }
+                    //END
+                    
                 }
             }
             

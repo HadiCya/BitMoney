@@ -19,7 +19,10 @@ struct ContentView: View {
             EndScreen(gamestate: gameState)
         case .difficulty:
             DifficultyScreen(gamestate: gameState)
-
+        case .settings:
+            SettingsPage(gamestate: gameState)
+        case .leaderboard:
+            LeaderboardView(gamestate: gameState)
         
         }
     }
@@ -30,7 +33,8 @@ enum AppState {
     case game
     case end
     case difficulty
- 
+    case settings
+    case leaderboard
 }
 
 struct ContentView_Previews: PreviewProvider {

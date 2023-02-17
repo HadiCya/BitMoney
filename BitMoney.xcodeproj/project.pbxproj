@@ -11,6 +11,9 @@
 		0F1FC012299A9CD3008D4CCF /* Popup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1FC011299A9CD3008D4CCF /* Popup.swift */; };
 		0F74A292299FB5F100EC77F9 /* MusicPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F74A291299FB5F100EC77F9 /* MusicPlayer.swift */; };
 		0F74A294299FB6E100EC77F9 /* backgroundMusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0F74A293299FB6E100EC77F9 /* backgroundMusic.mp3 */; };
+		0F74A296299FC1F300EC77F9 /* SettingsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F74A295299FC1F300EC77F9 /* SettingsPage.swift */; };
+		0F74A298299FC56400EC77F9 /* GameState+Leaderboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F74A297299FC56400EC77F9 /* GameState+Leaderboards.swift */; };
+		0F74A29C299FD6B600EC77F9 /* LeaderboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F74A29B299FD6B600EC77F9 /* LeaderboardView.swift */; };
 		0FB8035729914B8200443007 /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB8035629914B8200443007 /* JSONParser.swift */; };
 		0FB8035B29928DD100443007 /* prstart.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0FB8035829928DD100443007 /* prstart.ttf */; };
 		0FB8035C29928DD100443007 /* prstartk.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0FB8035929928DD100443007 /* prstartk.ttf */; };
@@ -34,6 +37,9 @@
 		0F1FC011299A9CD3008D4CCF /* Popup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Popup.swift; sourceTree = "<group>"; };
 		0F74A291299FB5F100EC77F9 /* MusicPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPlayer.swift; sourceTree = "<group>"; };
 		0F74A293299FB6E100EC77F9 /* backgroundMusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = backgroundMusic.mp3; sourceTree = "<group>"; };
+		0F74A295299FC1F300EC77F9 /* SettingsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPage.swift; sourceTree = "<group>"; };
+		0F74A297299FC56400EC77F9 /* GameState+Leaderboards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameState+Leaderboards.swift"; sourceTree = "<group>"; };
+		0F74A29B299FD6B600EC77F9 /* LeaderboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardView.swift; sourceTree = "<group>"; };
 		0FB8035629914B8200443007 /* JSONParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONParser.swift; sourceTree = "<group>"; };
 		0FB8035829928DD100443007 /* prstart.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = prstart.ttf; sourceTree = "<group>"; };
 		0FB8035929928DD100443007 /* prstartk.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = prstartk.ttf; sourceTree = "<group>"; };
@@ -105,6 +111,9 @@
 				0F1FC011299A9CD3008D4CCF /* Popup.swift */,
 				0F74A291299FB5F100EC77F9 /* MusicPlayer.swift */,
 				0F74A293299FB6E100EC77F9 /* backgroundMusic.mp3 */,
+				0F74A295299FC1F300EC77F9 /* SettingsPage.swift */,
+				0F74A297299FC56400EC77F9 /* GameState+Leaderboards.swift */,
+				0F74A29B299FD6B600EC77F9 /* LeaderboardView.swift */,
 			);
 			path = BitMoney;
 			sourceTree = "<group>";
@@ -192,13 +201,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F74A29C299FD6B600EC77F9 /* LeaderboardView.swift in Sources */,
 				0F74A292299FB5F100EC77F9 /* MusicPlayer.swift in Sources */,
 				0FF09047298D46030059C09E /* BitMoney.xcdatamodeld in Sources */,
 				BE99D37529953F7900DE4FCE /* Slider.swift in Sources */,
 				0FB8035729914B8200443007 /* JSONParser.swift in Sources */,
 				BECA73A62993F392005983F8 /* DifficultyScreen.swift in Sources */,
+				0F74A296299FC1F300EC77F9 /* SettingsPage.swift in Sources */,
 				0F045B162992A3FE00E01F19 /* TitleScreen.swift in Sources */,
 				0FF09044298D46030059C09E /* Persistence.swift in Sources */,
+				0F74A298299FC56400EC77F9 /* GameState+Leaderboards.swift in Sources */,
 				0F1FC012299A9CD3008D4CCF /* Popup.swift in Sources */,
 				0FF0903D298D46010059C09E /* GameView.swift in Sources */,
 				BECA73A42993EC9E005983F8 /* ContentView.swift in Sources */,
