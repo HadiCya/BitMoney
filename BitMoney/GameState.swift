@@ -15,7 +15,7 @@ class GameState : ObservableObject {
     @Published var scoreMultiplier: Double = 1
     @Published var showPopUp: String = ""
     @Published var currGame: Bool = false
-    var gameCenterUser: Bool = false
+    @Published var gameCenterUser: Bool = false
     var score: Int {
         return (self.day) * 100 * Int(self.scoreMultiplier)
     }

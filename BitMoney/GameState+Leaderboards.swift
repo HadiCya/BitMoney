@@ -26,8 +26,8 @@ extension GameState{
                 print(error?.localizedDescription ?? "")
                 return
             }
+            self.gameCenterUser = true
         }
-        self.gameCenterUser = true
     }
     func loadLeaderboard() {
         playersList.removeAll()
