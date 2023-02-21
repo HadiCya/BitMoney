@@ -48,12 +48,13 @@ class GameState : ObservableObject {
         for status in self.scenario.status{
             self.statuses[status]! -= money + 1
             if self.statuses[status]! <= 0 {
+                self.statuses[status]! = 0
                 self.statuses[Status.health]! -= 1
             }
         }
         
         self.money += money
-        if (self.money <= 0 || self.statuses[Status.health]! <= 0) {
+        if (self.money < 0 || self.statuses[Status.health]! <= 0) {
             endgame()
             return
         }
@@ -95,8 +96,6 @@ class GameState : ObservableObject {
         currGame = false
         
         setScoreLeaderboard()
-        //After you submit the score, populate the players list, only then you can log the playersList
-//        self.playersList.sort(by: >)
         appState = AppState.end
     }
 }

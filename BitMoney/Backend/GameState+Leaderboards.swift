@@ -15,7 +15,7 @@ struct Player: Hashable, Comparable, Identifiable {
     
     let id = UUID()
     let name: String
-    let score: String
+    let score: Int
 
 }
 
@@ -35,10 +35,10 @@ extension GameState{
             var playersListTemp : [Player] = []
             let leaderboards = try await GKLeaderboard.loadLeaderboards(IDs: [leaderboardIdentifier])
             if let leaderboard = leaderboards.filter ({ $0.baseLeaderboardID == self.leaderboardIdentifier }).first {
-                let allPlayers = try await leaderboard.loadEntries(for: .global, timeScope: .allTime, range: NSRange(1...10))
+                let allPlayers = try await leaderboard.loadEntries(for: .global, timeScope: .allTime, range: NSRange(1...20))
                 if allPlayers.1.count > 0 {
                     for leaderboardEntry in allPlayers.1 {
-                        playersListTemp.append(Player(name: leaderboardEntry.player.displayName, score:leaderboardEntry.formattedScore))
+                        playersListTemp.append(Player(name: leaderboardEntry.player.displayName, score:leaderboardEntry.score))
                                     print(playersListTemp)
 //                        playersListTemp.sort(by: >)
                     }
@@ -48,6 +48,7 @@ extension GameState{
             playersList = playersList.sorted {
                 $0.score < $1.score
             }
+            playersList.reverse()
             self.appState = .leaderboard
         }
     }

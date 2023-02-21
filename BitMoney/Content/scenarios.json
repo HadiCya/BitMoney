@@ -69,14 +69,14 @@
                 "outcome": -1 },{
                 "title": "Don't go out with them",
                 "outcome": 0 }],
-            "status": ["hunger"]
+            "status": ["hunger", "social"]
         },
         {
             "id": "Movies",
             "title": "You are asked to see the new super hero movie coming out tonight",
             "choiceArr": [{
                 "title": "Go out and buy snacks",
-                "outcome": -1 },{
+                "outcome": -2 },{
                 "title": "Go out but don't buy snacks",
                 "outcome": -1 },{
                 "title": "Don't go out",
