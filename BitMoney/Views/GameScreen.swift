@@ -76,22 +76,41 @@ struct GameView: View {
                          .foregroundColor(.black)
                     
                     ForEach(gamestate.scenario.choiceArr, id: \.title) { choice in
-                        Button(action: {gamestate.update(money: choice.outcome)})
-                        {
-                            Image("BlankButton")
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: geo.size.width * 0.9)
-                                .overlay(
-                                    Text(choice.title + " \(dollaSigns(money: choice.outcome))")
-                                        .font(Font.custom("PressStartK", size: 300))
-                                         .foregroundColor(.black)
-                                         .frame(width: geo.size.width * 0.7, height: geo.size.height * 0.06)
-                                         .minimumScaleFactor(0.01)
-                                    
-                                )
-                           
-                            }
+                        if (choice.scenario != nil){
+                            Button(action: {gamestate.update(money: choice.outcome, scenario: choice.scenario!)})
+                            {
+                                Image("BlankButton")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: geo.size.width * 0.9)
+                                    .overlay(
+                                        Text(choice.title + " \(dollaSigns(money: choice.outcome))")
+                                            .font(Font.custom("PressStartK", size: 300))
+                                             .foregroundColor(.black)
+                                             .frame(width: geo.size.width * 0.7, height: geo.size.height * 0.06)
+                                             .minimumScaleFactor(0.01)
+                                        
+                                    )
+                               
+                                }
+                        } else {
+                            Button(action: {gamestate.update(money: choice.outcome)})
+                            {
+                                Image("BlankButton")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: geo.size.width * 0.9)
+                                    .overlay(
+                                        Text(choice.title + " \(dollaSigns(money: choice.outcome))")
+                                            .font(Font.custom("PressStartK", size: 300))
+                                             .foregroundColor(.black)
+                                             .frame(width: geo.size.width * 0.7, height: geo.size.height * 0.06)
+                                             .minimumScaleFactor(0.01)
+                                        
+                                    )
+                               
+                                }
+                        }
                        
                         
                     }

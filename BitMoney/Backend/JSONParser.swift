@@ -8,12 +8,17 @@
 import SwiftUI
 
 struct Scenario: Codable {
-    var id: String
     var title: String
     var choiceArr: [Choice]
     var status: [Status]
     
-    static let allScenarios: [Scenario] = Bundle.main.decode(file: "scenarios.json")
+    static let allScenarios: [String: Scenario] = Bundle.main.decode(file: "scenarios.json")
+}
+
+struct Choice: Codable {
+    var title: String
+    var outcome: Int
+    var scenario: String?
 }
 
 enum Status: String, Codable, CaseIterable {
@@ -22,24 +27,19 @@ enum Status: String, Codable, CaseIterable {
     case hunger
     case happiness
     
-    var color: Color {
-        switch self {
-            
-        case .health:
-            return .red
-        case .social:
-            return .blue
-        case .hunger:
-            return .green
-        case .happiness:
-            return .yellow
-        }
-    }
-}
-
-struct Choice: Codable {
-    var title: String
-    var outcome: Int
+//    var color: Color {
+//        switch self {
+//
+//        case .health:
+//            return .red
+//        case .social:
+//            return .blue
+//        case .hunger:
+//            return .green
+//        case .happiness:
+//            return .yellow
+//        }
+//    }
 }
 
 extension Bundle{
