@@ -7,8 +7,9 @@
 
 import SwiftUI
 
-struct LeaderboardView: View {
+struct LeaderboardScreen: View {
     @ObservedObject var gamestate: GameState
+    @ObservedObject var soundplayer: MusicPlayer
     var body: some View {
         GeometryReader { geo in
                 ZStack (alignment: .top){
@@ -41,6 +42,8 @@ struct LeaderboardView: View {
                         }
                         Button(action: {
                             gamestate.appState = .title
+                            HapticManager.instance.impact(style: .light)
+                            soundplayer.startSoundEffect(sound: "PluckSound")
                         })
                         {
                             Image("BlankButton")
@@ -65,11 +68,5 @@ struct LeaderboardView: View {
             }
         }
         
-    }
-}
-
-struct LeaderboardView_Previews: PreviewProvider {
-    static var previews: some View {
-        LeaderboardView(gamestate: GameState())
     }
 }

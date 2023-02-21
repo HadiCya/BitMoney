@@ -14,6 +14,7 @@ struct Popup: View {
         GeometryReader { geo in
                 Button(action: {
                     showPopup = ""
+                    HapticManager.instance.impact(style: .soft)
                 })
                 {
                     ZStack{

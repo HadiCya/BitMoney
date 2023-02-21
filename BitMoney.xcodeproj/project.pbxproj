@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		0F045B162992A3FE00E01F19 /* TitleScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F045B152992A3FE00E01F19 /* TitleScreen.swift */; };
 		0F1FC012299A9CD3008D4CCF /* Popup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1FC011299A9CD3008D4CCF /* Popup.swift */; };
+		0F69DD8B29A523EC002586C6 /* HapticManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F69DD8A29A523EC002586C6 /* HapticManager.swift */; };
+		0F69DD9129A52845002586C6 /* PluckSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0F69DD9029A52845002586C6 /* PluckSound.mp3 */; };
+		0F69DDA329A5515E002586C6 /* flyingmoney.gif in Resources */ = {isa = PBXBuildFile; fileRef = 0F69DDA229A5515E002586C6 /* flyingmoney.gif */; };
 		0F74A292299FB5F100EC77F9 /* MusicPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F74A291299FB5F100EC77F9 /* MusicPlayer.swift */; };
 		0F74A296299FC1F300EC77F9 /* SettingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F74A295299FC1F300EC77F9 /* SettingsScreen.swift */; };
 		0F74A298299FC56400EC77F9 /* GameState+Leaderboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F74A297299FC56400EC77F9 /* GameState+Leaderboards.swift */; };
@@ -18,11 +21,11 @@
 		0FB8035C29928DD100443007 /* prstartk.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0FB8035929928DD100443007 /* prstartk.ttf */; };
 		0FB8035D29928DD100443007 /* license.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0FB8035A29928DD100443007 /* license.txt */; };
 		0FD9DF1E29A44745003F9948 /* backgroundMusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0FD9DF1D29A44745003F9948 /* backgroundMusic.mp3 */; };
+		0FD9DF2029A4FECF003F9948 /* LogScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD9DF1F29A4FECF003F9948 /* LogScreen.swift */; };
 		0FF0903B298D46010059C09E /* BitMoneyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF0903A298D46010059C09E /* BitMoneyApp.swift */; };
 		0FF0903D298D46010059C09E /* GameScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF0903C298D46010059C09E /* GameScreen.swift */; };
 		0FF0903F298D46030059C09E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FF0903E298D46030059C09E /* Assets.xcassets */; };
 		0FF09042298D46030059C09E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FF09041298D46030059C09E /* Preview Assets.xcassets */; };
-		0FF09044298D46030059C09E /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF09043298D46030059C09E /* Persistence.swift */; };
 		0FF09052298D68290059C09E /* scenarios.json in Resources */ = {isa = PBXBuildFile; fileRef = 0FF09051298D68290059C09E /* scenarios.json */; };
 		BE33EF2B2992E8460027B520 /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE33EF2A2992E8460027B520 /* GameState.swift */; };
 		BE99D37529953F7900DE4FCE /* Slider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE99D37429953F7900DE4FCE /* Slider.swift */; };
@@ -34,6 +37,9 @@
 /* Begin PBXFileReference section */
 		0F045B152992A3FE00E01F19 /* TitleScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleScreen.swift; sourceTree = "<group>"; };
 		0F1FC011299A9CD3008D4CCF /* Popup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Popup.swift; sourceTree = "<group>"; };
+		0F69DD8A29A523EC002586C6 /* HapticManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticManager.swift; sourceTree = "<group>"; };
+		0F69DD9029A52845002586C6 /* PluckSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = PluckSound.mp3; path = ../../../../Downloads/PluckSound.mp3; sourceTree = "<group>"; };
+		0F69DDA229A5515E002586C6 /* flyingmoney.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = flyingmoney.gif; sourceTree = "<group>"; };
 		0F74A291299FB5F100EC77F9 /* MusicPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPlayer.swift; sourceTree = "<group>"; };
 		0F74A295299FC1F300EC77F9 /* SettingsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreen.swift; sourceTree = "<group>"; };
 		0F74A297299FC56400EC77F9 /* GameState+Leaderboards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameState+Leaderboards.swift"; sourceTree = "<group>"; };
@@ -43,12 +49,12 @@
 		0FB8035929928DD100443007 /* prstartk.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = prstartk.ttf; sourceTree = "<group>"; };
 		0FB8035A29928DD100443007 /* license.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = license.txt; sourceTree = "<group>"; };
 		0FD9DF1D29A44745003F9948 /* backgroundMusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = backgroundMusic.mp3; path = ../../../../Downloads/backgroundMusic.mp3; sourceTree = "<group>"; };
+		0FD9DF1F29A4FECF003F9948 /* LogScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogScreen.swift; sourceTree = "<group>"; };
 		0FF09037298D46010059C09E /* BitMoney.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BitMoney.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FF0903A298D46010059C09E /* BitMoneyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitMoneyApp.swift; sourceTree = "<group>"; };
 		0FF0903C298D46010059C09E /* GameScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScreen.swift; sourceTree = "<group>"; };
 		0FF0903E298D46030059C09E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0FF09041298D46030059C09E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		0FF09043298D46030059C09E /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		0FF09048298D46030059C09E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0FF09051298D68290059C09E /* scenarios.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = scenarios.json; sourceTree = "<group>"; };
 		BE33EF2A2992E8460027B520 /* GameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameState.swift; sourceTree = "<group>"; };
@@ -77,6 +83,7 @@
 				BE33EF2A2992E8460027B520 /* GameState.swift */,
 				0F74A291299FB5F100EC77F9 /* MusicPlayer.swift */,
 				0F74A297299FC56400EC77F9 /* GameState+Leaderboards.swift */,
+				0F69DD8A29A523EC002586C6 /* HapticManager.swift */,
 			);
 			path = Backend;
 			sourceTree = "<group>";
@@ -89,9 +96,11 @@
 				BEACACEA2992A8FC0081BE84 /* EndScreen.swift */,
 				BECA73A52993F392005983F8 /* DifficultyScreen.swift */,
 				0F74A295299FC1F300EC77F9 /* SettingsScreen.swift */,
+				0F69DDA229A5515E002586C6 /* flyingmoney.gif */,
 				0F74A29B299FD6B600EC77F9 /* LeaderboardScreen.swift */,
 				BE99D37429953F7900DE4FCE /* Slider.swift */,
 				0F1FC011299A9CD3008D4CCF /* Popup.swift */,
+				0FD9DF1F29A4FECF003F9948 /* LogScreen.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -102,6 +111,7 @@
 				0FF0903E298D46030059C09E /* Assets.xcassets */,
 				0FD9DF1D29A44745003F9948 /* backgroundMusic.mp3 */,
 				0FF09051298D68290059C09E /* scenarios.json */,
+				0F69DD9029A52845002586C6 /* PluckSound.mp3 */,
 			);
 			path = Content;
 			sourceTree = "<group>";
@@ -132,7 +142,6 @@
 				0FD9DF1A29A4371B003F9948 /* Content */,
 				0FD9DF1929A436B7003F9948 /* Views */,
 				0FD9DF1829A4365A003F9948 /* Backend */,
-				0FF09043298D46030059C09E /* Persistence.swift */,
 				0FF09048298D46030059C09E /* Info.plist */,
 				0FF09040298D46030059C09E /* Preview Content */,
 			);
@@ -163,6 +172,8 @@
 			dependencies = (
 			);
 			name = BitMoney;
+			packageProductDependencies = (
+			);
 			productName = BitMoney;
 			productReference = 0FF09037298D46010059C09E /* BitMoney.app */;
 			productType = "com.apple.product-type.application";
@@ -191,6 +202,8 @@
 				Base,
 			);
 			mainGroup = 0FF0902E298D46010059C09E;
+			packageReferences = (
+			);
 			productRefGroup = 0FF09038298D46010059C09E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -209,8 +222,10 @@
 				0FD9DF1E29A44745003F9948 /* backgroundMusic.mp3 in Resources */,
 				0FF09052298D68290059C09E /* scenarios.json in Resources */,
 				0FF09042298D46030059C09E /* Preview Assets.xcassets in Resources */,
+				0F69DD9129A52845002586C6 /* PluckSound.mp3 in Resources */,
 				0FF0903F298D46030059C09E /* Assets.xcassets in Resources */,
 				0FB8035B29928DD100443007 /* prstart.ttf in Resources */,
+				0F69DDA329A5515E002586C6 /* flyingmoney.gif in Resources */,
 				0FB8035C29928DD100443007 /* prstartk.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -225,15 +240,16 @@
 				0F74A29C299FD6B600EC77F9 /* LeaderboardScreen.swift in Sources */,
 				0F74A292299FB5F100EC77F9 /* MusicPlayer.swift in Sources */,
 				BE99D37529953F7900DE4FCE /* Slider.swift in Sources */,
+				0F69DD8B29A523EC002586C6 /* HapticManager.swift in Sources */,
 				0FB8035729914B8200443007 /* JSONParser.swift in Sources */,
 				BECA73A62993F392005983F8 /* DifficultyScreen.swift in Sources */,
 				0F74A296299FC1F300EC77F9 /* SettingsScreen.swift in Sources */,
 				0F045B162992A3FE00E01F19 /* TitleScreen.swift in Sources */,
-				0FF09044298D46030059C09E /* Persistence.swift in Sources */,
 				0F74A298299FC56400EC77F9 /* GameState+Leaderboards.swift in Sources */,
 				0F1FC012299A9CD3008D4CCF /* Popup.swift in Sources */,
 				0FF0903D298D46010059C09E /* GameScreen.swift in Sources */,
 				BECA73A42993EC9E005983F8 /* ContentView.swift in Sources */,
+				0FD9DF2029A4FECF003F9948 /* LogScreen.swift in Sources */,
 				BE33EF2B2992E8460027B520 /* GameState.swift in Sources */,
 				0FF0903B298D46010059C09E /* BitMoneyApp.swift in Sources */,
 				BEACACEB2992A8FC0081BE84 /* EndScreen.swift in Sources */,

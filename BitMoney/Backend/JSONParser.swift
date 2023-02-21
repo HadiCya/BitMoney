@@ -26,6 +26,8 @@ enum Status: String, Codable, CaseIterable {
     case social
     case hunger
     case happiness
+    case credit
+    case gas
     
 //    var color: Color {
 //        switch self {

@@ -12,9 +12,9 @@ class MusicPlayer: ObservableObject{
     var audioPlayer: AVAudioPlayer?
     @Published var music: Bool = true
 
-    func startBackgroundMusic() {
+    func startBackgroundMusic(sound: String) {
         if music {
-            if let bundle = Bundle.main.path(forResource: "backgroundMusic", ofType: "mp3"){
+            if let bundle = Bundle.main.path(forResource: sound, ofType: "mp3"){
                 let backgroundMusic = NSURL(fileURLWithPath: bundle)
                 do {
                     audioPlayer = try AVAudioPlayer(contentsOf:backgroundMusic as URL)
@@ -27,6 +27,19 @@ class MusicPlayer: ObservableObject{
                 }
             }
         }
+    }
+    func startSoundEffect(sound: String){
+            if let bundle = Bundle.main.path(forResource: sound, ofType: "mp3"){
+                let backgroundMusic = NSURL(fileURLWithPath: bundle)
+                do {
+                    audioPlayer = try AVAudioPlayer(contentsOf:backgroundMusic as URL)
+                    guard let audioPlayer = audioPlayer else { return }
+                    audioPlayer.prepareToPlay()
+                    audioPlayer.play()
+                } catch {
+                    print(error)
+                }
+            }
     }
     
     func stopBackgroundMusic() {

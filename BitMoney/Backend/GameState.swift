@@ -11,7 +11,7 @@ class GameState : ObservableObject {
     @Published var appState = AppState.title
     @Published var money: Int = 12
     @Published var day: Int = 1
-    @Published var scenario: Scenario
+    @Published var scenario: (String, Scenario)
     @Published var scoreMultiplier: Double = 1
     @Published var showPopUp: String = ""
     @Published var currGame: Bool = false
@@ -20,6 +20,7 @@ class GameState : ObservableObject {
         return Int(Double(self.day) * 100.0 * self.scoreMultiplier)
     }
     var scenarios: [String: Scenario]
+    var history: [(Int, String, String, Int)] = []
     var statuses: [Status: Int] = [:]
     
     var leaderboardIdentifier = "bitMoneyLeaderboard"
@@ -28,11 +29,12 @@ class GameState : ObservableObject {
     
     init(){
         self.scenarios = Scenario.allScenarios
-        self.scenario = self.scenarios.randomElement()!.value
+        self.scenario = self.scenarios.randomElement()!
         authenticateUser()
     }
     
     func setMoney(money: Int){
+        self.history = []
         currGame = true
         self.day = 1
         self.money = money
@@ -41,9 +43,9 @@ class GameState : ObservableObject {
         }
     }
     
-    func update(money: Int, scenario: String = ""){
-        
-        for status in self.scenario.status{
+    func update(money: Int, title: String, scenario: String = ""){
+        history.append((self.day, self.scenario.0, title, money))
+        for status in self.scenario.1.status{
             self.statuses[status]! -= money + 1
             if self.statuses[status]! <= 0 {
                 self.statuses[status]! = 0
@@ -56,21 +58,12 @@ class GameState : ObservableObject {
             endgame()
             return
         }
-        
-//        if let unpackedScenario = scenario {
-//            //self.scenario = scenarios[unpackedScenario]
-//        }
-//        var rand = Int.random(in: 0..<scenarios.count)
-//        while (self.scenario[id] == self.scenario.randomElement()?.key){
-//            rand = Int.random(in: 0..<scenarios.count)
-//        }
-//        self.scenario = scenarios[rand]
         if scenario != "" {
-            self.scenario = self.scenarios[scenario]!
+            self.scenario.1 = self.scenarios[scenario]!
         } else {
-            var temp = self.scenarios.randomElement()!.value
-            while (self.scenario.title == temp.title){
-                temp = self.scenarios.randomElement()!.value
+            var temp = self.scenarios.randomElement()!
+            while (self.scenario.0 == temp.0){
+                temp = self.scenarios.randomElement()!
             }
             self.scenario = temp
         }
@@ -89,18 +82,6 @@ class GameState : ObservableObject {
         }
         
     }
-    
-//    func statusEffects(statuses: [Status:Int]) -> String{
-//        var output = "You are feeling "
-//        for status in Status.allCases{
-//            if statuses[status]! <= 5 {
-//                output += "\(status) "
-//            }
-//        }
-//        output = String(output.dropLast())
-//        output += "."
-//        return output
-//    }
     
     func endgame(){
         currGame = false

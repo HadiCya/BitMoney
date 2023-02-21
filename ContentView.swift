@@ -6,28 +6,33 @@
 //
 
 import SwiftUI
+import CoreHaptics
 
 struct ContentView: View {
     @StateObject var gameState = GameState()
     @StateObject var musicPlayer = MusicPlayer()
+    @StateObject var soundPlayer = MusicPlayer()
+    
     var body: some View {
         switch gameState.appState {
         case .title:
-            TitleScreen(gamestate: gameState)
+            TitleScreen(gamestate: gameState, soundplayer: soundPlayer)
         case .game:
-            GameView(gamestate: gameState, musicplayer: musicPlayer)
+            GameScreen(gamestate: gameState, musicplayer: musicPlayer, soundplayer: soundPlayer)
         case .end:
-            EndScreen(gamestate: gameState)
+            EndScreen(gamestate: gameState, soundplayer: soundPlayer)
         case .difficulty:
-            DifficultyScreen(gamestate: gameState)
+            DifficultyScreen(gamestate: gameState, soundplayer: soundPlayer)
         case .settings:
-            SettingsPage(gamestate: gameState, musicplayer: musicPlayer)
+            SettingsScreen(gamestate: gameState, musicplayer: musicPlayer, soundplayer: soundPlayer)
         case .leaderboard:
-            LeaderboardView(gamestate: gameState)
-        
+            LeaderboardScreen(gamestate: gameState, soundplayer: soundPlayer)
+        case .log:
+            LogScreen(gamestate: gameState, soundplayer: soundPlayer)
         }
     }
 }
+
 
 enum AppState {
     case title
@@ -36,6 +41,7 @@ enum AppState {
     case difficulty
     case settings
     case leaderboard
+    case log
 }
 
 struct ContentView_Previews: PreviewProvider {

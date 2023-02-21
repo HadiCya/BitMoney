@@ -10,6 +10,7 @@ import SwiftUI
 
 struct EndScreen: View {
     @ObservedObject var gamestate: GameState
+    @ObservedObject var soundplayer: MusicPlayer
     @State private var isActive : Bool = false
     var body: some View {
         GeometryReader { geo in
@@ -41,20 +42,29 @@ struct EndScreen: View {
                          .frame(width: geo.size.width * 0.9, height: geo.size.height * 0.08)
                          .minimumScaleFactor(0.01)
                          .padding(geo.size.width * 0.05)
-                    Image("BlankButton")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: geo.size.width * 0.9)
-                        .overlay(
-                            Text("Log")
-                                .multilineTextAlignment(.center)
-                                .font(Font.custom("PressStartK", size: 300))
-                                 .foregroundColor(.black)
-                                 .frame(width: geo.size.width * 0.7, height: geo.size.height * 0.05)
-                                 .minimumScaleFactor(0.01)
-                        )
+                    Button(action: {
+                        gamestate.appState = .log
+                        HapticManager.instance.impact(style: .light)
+                        soundplayer.startSoundEffect(sound: "PluckSound")
+                   })
+                    {
+                        Image("BlankButton")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: geo.size.width * 0.9)
+                            .overlay(
+                                Text("Log")
+                                    .multilineTextAlignment(.center)
+                                    .font(Font.custom("PressStartK", size: 300))
+                                     .foregroundColor(.black)
+                                     .frame(width: geo.size.width * 0.7, height: geo.size.height * 0.05)
+                                     .minimumScaleFactor(0.01)
+                            )
+                    }
                     Button(action: {
                         gamestate.appState = .difficulty
+                        HapticManager.instance.impact(style: .light)
+                        soundplayer.startSoundEffect(sound: "PluckSound")
                    })
                   {
                       Image("BlankButton")
@@ -73,6 +83,8 @@ struct EndScreen: View {
                    
                     Button(action: {
                         gamestate.appState = .title
+                        HapticManager.instance.impact(style: .light)
+                        soundplayer.startSoundEffect(sound: "PluckSound")
                    })
                   {
                       Image("BlankButton")
@@ -89,21 +101,21 @@ struct EndScreen: View {
                           )
                   }
                     
-                    Image("ShareIcon")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: geo.size.width * 0.1)
-                        .padding(.top, geo.size.height * 0.04)
+                    ShareLink(item: "https://testflight.apple.com/join/kQKRuoKS", message: Text("I got a \(gamestate.score) in BitMoney. See if you can beat my score!")) {
+                            Image("ShareIcon")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: geo.size.width * 0.1)
+                            .padding(.top, geo.size.height * 0.04)
+                        }
+//                    Image("ShareIcon")
+//                        .resizable()
+//                        .scaledToFit()
+//                        .frame(width: geo.size.width * 0.1)
+//                        .padding(.top, geo.size.height * 0.04)
+                        
                 }
             }
         }
-    }
-}
-
-
-
-struct EndScreen_Previews: PreviewProvider {
-    static var previews: some View {
-        EndScreen(gamestate: GameState())
     }
 }

@@ -6,18 +6,15 @@
 //
 
 import SwiftUI
-
+import UIKit
 
 
 
 @main
 struct BitMoneyApp: App {
     var body: some Scene {
-        WindowGroup {
+    WindowGroup {
             ContentView()
-                
-            
-                
         }
     }
 }

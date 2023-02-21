@@ -35,7 +35,9 @@
         "outcome": 0
       }
     ],
-    "status": []
+    "status": [
+        "gas"
+    ]
   },
   "Drinking": {
     "title": "Your friends invite you out drinking. Do you go?",
@@ -73,7 +75,9 @@
         "outcome": 0
       }
     ],
-    "status": []
+    "status": [
+        "gas"
+    ]
   },
   "Cat Sick": {
     "title": "Your cat, Kobe gets sick",
@@ -92,7 +96,8 @@
       }
     ],
     "status": [
-      "happiness"
+      "happiness",
+      "credit"
     ]
   },
   "Eating Out": {
@@ -153,7 +158,9 @@
         "outcome": 0
       }
     ],
-    "status": []
+    "status": [
+        "credit"
+    ]
   },
   "Phone Break": {
     "title": "Walking to work and you drop and break your phone",
@@ -232,7 +239,8 @@
       }
     ],
     "status": [
-      "happiness"
+      "happiness",
+      "gas"
     ]
   },
   "Forgot Lunch": {

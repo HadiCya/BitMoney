@@ -11,6 +11,7 @@ import SwiftUI
 struct TitleScreen: View {
 
     @ObservedObject var gamestate: GameState
+    @ObservedObject var soundplayer: MusicPlayer
     @State private var isActive : Bool = false
     var body: some View {
         
@@ -33,6 +34,8 @@ struct TitleScreen: View {
                         .minimumScaleFactor(0.01)
                     Button(action: {
                         gamestate.appState = .difficulty
+                        HapticManager.instance.impact(style: .light)
+                        soundplayer.startSoundEffect(sound: "PluckSound")
                     })
                     {
                         Image("BlankButton")
@@ -49,6 +52,8 @@ struct TitleScreen: View {
                     }
                     Button(action: {
                         resume(gamestate: gamestate)
+                        HapticManager.instance.impact(style: .light)
+                        soundplayer.startSoundEffect(sound: "PluckSound")
                     })
                     {
                         Image("BlankButton")
@@ -66,6 +71,8 @@ struct TitleScreen: View {
                     }
                     Button(action: {
                         gamestate.appState = .settings
+                        HapticManager.instance.impact(style: .light)
+                        soundplayer.startSoundEffect(sound: "PluckSound")
                     })
                     {
                         Image("BlankButton")
@@ -84,6 +91,8 @@ struct TitleScreen: View {
                     if gamestate.gameCenterUser{
                         Button(action: {
                             gamestate.loadLeaderboard()
+                            HapticManager.instance.impact(style: .heavy)
+                            soundplayer.startSoundEffect(sound: "PluckSound")
                         })
                         {
                             Image("BlankButton")
@@ -117,8 +126,3 @@ func resume(gamestate: GameState){
 }
 
 
-struct TitleScreen_Previews: PreviewProvider {
-    static var previews: some View {
-        TitleScreen(gamestate: GameState())
-    }
-}

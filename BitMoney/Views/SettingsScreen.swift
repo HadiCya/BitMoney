@@ -7,9 +7,10 @@
 
 import SwiftUI
 
-struct SettingsPage: View {
+struct SettingsScreen: View {
     @ObservedObject var gamestate: GameState
     @ObservedObject var musicplayer: MusicPlayer
+    @ObservedObject var soundplayer: MusicPlayer
     var body: some View {
         GeometryReader { geo in
             ZStack (alignment: .top){
@@ -28,6 +29,8 @@ struct SettingsPage: View {
                          .padding(geo.size.width * 0.05)
                     Button(action: {
                         musicplayer.music = !musicplayer.music
+                        HapticManager.instance.impact(style: .light)
+                        soundplayer.startSoundEffect(sound: "PluckSound")
                     })
                     {
                         Image("BlankButton")
@@ -47,6 +50,8 @@ struct SettingsPage: View {
                     }
                             Button(action: {
                                 gamestate.appState = .title
+                                HapticManager.instance.impact(style: .light)
+                                soundplayer.startSoundEffect(sound: "PluckSound")
                             })
                             {
                                 Image("BlankButton")
@@ -80,8 +85,3 @@ func onOff(music: Bool) -> String{
     return "Off"
 }
 
-struct SettingsPage_Previews: PreviewProvider {
-    static var previews: some View {
-        SettingsPage(gamestate: GameState(), musicplayer: MusicPlayer())
-    }
-}

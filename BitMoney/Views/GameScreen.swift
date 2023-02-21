@@ -8,9 +8,12 @@
 import SwiftUI
 import CoreData
 
-struct GameView: View {
+
+
+struct GameScreen: View {
     @ObservedObject var gamestate: GameState
     @ObservedObject var musicplayer: MusicPlayer
+    @ObservedObject var soundplayer: MusicPlayer
     var body: some View {
         GeometryReader { geo in
             ZStack{
@@ -29,6 +32,8 @@ struct GameView: View {
                             HStack() {
                                 Button(action: {
                                    gamestate.appState = .title
+                                    HapticManager.instance.notification(type: .success)
+                                    soundplayer.startSoundEffect(sound: "PluckSound")
                                     //showPopUp = true
                                     
                                })
@@ -69,15 +74,19 @@ struct GameView: View {
 //                    Text("Hunger " + String(gamestate.statuses[Status.hunger].unsafelyUnwrapped))
 //                    Text("Social " + String(gamestate.statuses[Status.social].unsafelyUnwrapped))
 //                    Text("Happiness " + String(gamestate.statuses[Status.happiness].unsafelyUnwrapped))
-                    Text(gamestate.scenario.title)
+                    Text(gamestate.scenario.1.title)
                         .font(Font.custom("PressStartK", size: 300))
                          .frame(width: geo.size.width * 0.8, height: geo.size.height * 0.15)
                          .minimumScaleFactor(0.01)
                          .foregroundColor(.black)
                     
-                    ForEach(gamestate.scenario.choiceArr, id: \.title) { choice in
+                    ForEach(gamestate.scenario.1.choiceArr, id: \.title) { choice in
                         if (choice.scenario != nil){
-                            Button(action: {gamestate.update(money: choice.outcome, scenario: choice.scenario!)})
+                            Button(action: {
+                                gamestate.update(money: choice.outcome, title: choice.title, scenario: choice.scenario!)
+                                HapticManager.instance.impact(style: .light)
+                                soundplayer.startSoundEffect(sound: "PluckSound")
+                            })
                             {
                                 Image("BlankButton")
                                     .resizable()
@@ -94,7 +103,11 @@ struct GameView: View {
                                
                                 }
                         } else {
-                            Button(action: {gamestate.update(money: choice.outcome)})
+                            Button(action: {
+                                gamestate.update(money: choice.outcome, title: choice.title)
+                                HapticManager.instance.impact(style: .light)
+                                soundplayer.startSoundEffect(sound: "PluckSound")
+                            })
                             {
                                 Image("BlankButton")
                                     .resizable()
@@ -116,7 +129,7 @@ struct GameView: View {
                     }
                 }
             }.onAppear {
-                musicplayer.startBackgroundMusic()
+                musicplayer.startBackgroundMusic(sound: "backgroundMusic")
             }.onDisappear {
                 musicplayer.stopBackgroundMusic()
             }

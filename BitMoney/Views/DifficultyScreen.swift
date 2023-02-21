@@ -13,6 +13,7 @@ import SwiftUI
 struct DifficultyScreen: View {
     @State private var currentValue = 0.0
     @ObservedObject var gamestate: GameState
+    @ObservedObject var soundplayer: MusicPlayer
     @State private var isActive : Bool = false
     @State private var sliderMath = 2.0 + (2.0 / 9.0)
     @State private var moneyMath = 33.0 + (1.0 / 3.0)
@@ -65,6 +66,8 @@ struct DifficultyScreen: View {
                                 gamestate.appState = .game
                                 gamestate.setMoney(money: Int(moneyMath * (currentValue / (geo.size.width * 0.85)) + 5))
                                 gamestate.scoreMultiplier = abs(sliderMath * (currentValue / (geo.size.width * 0.85)) - 2)
+                                HapticManager.instance.impact(style: .light)
+                                soundplayer.startSoundEffect(sound: "PluckSound")
                             })
                             {
                                 Image("BlankButton")
@@ -84,6 +87,8 @@ struct DifficultyScreen: View {
                             }
                             Button(action: {
                                 gamestate.appState = .title
+                                HapticManager.instance.impact(style: .light)
+                                soundplayer.startSoundEffect(sound: "PluckSound")
                             })
                             {
                                 Image("BlankButton")
@@ -112,15 +117,13 @@ struct DifficultyScreen: View {
 
 func calculateDifficulty(val: Int) -> String{
     if val > 25{
+        HapticManager.instance.impact(style: .soft)
         return "Easy"
     }
     if val > 15 {
+        HapticManager.instance.impact(style: .soft)
         return "Medium"
     }
+    HapticManager.instance.impact(style: .soft)
     return "Hard"
-}
-struct DifficultyScreen_Previews: PreviewProvider {
-    static var previews: some View {
-        DifficultyScreen(gamestate: GameState())
-    }
 }
