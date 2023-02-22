@@ -14,9 +14,6 @@ We may collect non-personal information such as device type, operating system, a
 Sharing of Information: 
 We do not share any data with third parties or use it for marketing or advertising purposes. Any information you provide while using the BitMoney app will remain strictly confidential and will not be shared or sold.
 
-Security: 
-We take reasonable measures to protect your personal information from unauthorized access, use, or disclosure. However, no security measures are 100% effective, and we cannot guarantee the security of your information.
-
 Changes to this Policy: 
 We reserve the right to modify this privacy policy at any time, so please review it frequently. Changes and clarifications will take effect immediately upon their posting on the app.
 
