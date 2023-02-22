@@ -34,7 +34,7 @@ class GameState : ObservableObject {
     }
     
     func setMoney(money: Int){
-        self.history = []
+        self.history.removeAll()
         currGame = true
         self.day = 1
         self.money = money
